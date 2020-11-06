@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>William@Wiki</title>
+    
+    
+        <meta name="keywords" content="William@Wiki" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="C++基础 重点：const、引用类型  const强类型，类型转换需要显示说明 const float &#x3D;&#x3D; float  const const 限定成员函数：class obj &amp;#123; int fc() const &amp;#125;  定义一个常量，必须在定义时，赋初值；   常量不能在赋值号左边出现；   常量可以在赋值号右边出现；  常量的地址，只能赋值给一个常量指针  常量的地址，可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="William@Wiki">
+<meta property="og:url" content="http://example.com/wiki/%E5%A4%A7%E4%BA%8C%E4%B8%8A%20C++/index.html">
+<meta property="og:site_name" content="William@Wiki">
+<meta property="og:description" content="C++基础 重点：const、引用类型  const强类型，类型转换需要显示说明 const float &#x3D;&#x3D; float  const const 限定成员函数：class obj &amp;#123; int fc() const &amp;#125;  定义一个常量，必须在定义时，赋初值；   常量不能在赋值号左边出现；   常量可以在赋值号右边出现；  常量的地址，只能赋值给一个常量指针  常量的地址，可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201002081502.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201002081452.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016082704.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016082857.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016090112.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016091854.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201020105251.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027105750.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027102300.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027114930.png">
+<meta property="og:image" content="https://i.loli.net/2020/11/03/rDp8B3yxFAJedOG.png">
+<meta property="article:published_time" content="2020-11-06T08:35:32.773Z">
+<meta property="article:modified_time" content="2020-11-03T03:31:06.046Z">
+<meta property="article:author" content="WeiliangBai">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201002081502.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="William@Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">William@Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.784Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.782Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.781Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.779Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.778Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-大二上 C++" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><blockquote>
+<p>重点：const、引用类型</p>
+</blockquote>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>强类型，类型转换需要显示说明</p>
+<p><code>const float == float  const</code></p>
+<p>const 限定成员函数：<code>class obj &#123; int fc() const &#125;</code></p>
+<ul>
+<li>定义一个常量，必须在定义时，赋初值； </li>
+<li> 常量不能在赋值号左边出现； </li>
+<li> 常量可以在赋值号右边出现； </li>
+<li>常量的地址，只能赋值给一个常量指针</li>
+</ul>
+<p>常量的地址，可以进行强制地址类型转换； 转换后，可以在赋值号左右都出现</p>
+<p><code>volitile</code> 修饰类型：易失性，访问该变量的时候直接访问内存单元而不会代换掉。</p>
+<p>绕过<code>const</code>的方法：对其地址进行强制类型转换，再解析。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><h2 id="左右值"><a href="#左右值" class="headerlink" title="左右值"></a>左右值</h2><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201002081502.png" alt="image-20201002081432622"></p>
+<p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201002081452.png" alt="image-20201002081452412"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>函数调用时按参数列表从右至左顺序压入栈区</p>
+<h1 id="C-类"><a href="#C-类" class="headerlink" title="C++ 类"></a>C++ 类</h1><blockquote>
+<p>关键字：深拷贝、浅拷贝</p>
+</blockquote>
+<h2 id="构造与析构"><a href="#构造与析构" class="headerlink" title="构造与析构"></a>构造与析构</h2><p><strong>若程序员没有主动给类定义构造函数，编译器自动给一个缺省的构造函数。一旦程序员定义了一个构造函数，系统将不会再给出缺省构造函数。除了系统缺省的构造函数外，只要构造函数无参或者参数有缺省值， 编译器会认为它就是缺省构造函数。缺省的构造函数同时只能有1个。</strong></p>
+<p><code>对象数组初始化构造器：ARRAY[5] = &#123;&#123;ARRAY[0]的构造参数&#125;, ...&#125;</code></p>
+<p>析构函数一般用来释放体外空间，不用来释放本结点空间。</p>
+<h2 id="浅拷贝的危害"><a href="#浅拷贝的危害" class="headerlink" title="浅拷贝的危害"></a>浅拷贝的危害</h2><p>当实例中有指针指向堆区内存时，浅拷贝得到的指针指向<strong>同一堆区空间</strong>，析构的时候就会相互影响</p>
+<p>默认浅拷贝构造函数：<code>Student(stu)</code></p>
+<p>非法的复制构造函数：<code>Student(Student a)</code></p>
+<p>自定义深拷贝构造函数：<code>Student(const Student &amp;a)</code></p>
+<h2 id="new-和-delete"><a href="#new-和-delete" class="headerlink" title="new 和 delete"></a>new 和 delete</h2><ul>
+<li><p><code>new &lt;类型表达式&gt;</code></p>
+</li>
+<li><p><code>delete &lt;指针&gt;          delete  sq;</code></p>
+<ul>
+<li>指针指向非数组的单个实体</li>
+<li>如sq指向对象，则自动调用析构函数，再释放对象所占的内存。</li>
+</ul>
+</li>
+<li><p><code>delete [ ] &lt;数组指针&gt;    delete [] aq;</code></p>
+<ul>
+<li><p>指针指向任意维的数组时使用 </p>
+</li>
+<li><p> 对所有对象(元素) 自动调用析构函数。</p>
+</li>
+<li><p>若数组元素为简单类型，则可用<code>delete &lt;指针&gt;</code>代替</p>
+</li>
+</ul>
+</li>
+<li><p>delete 并不会销毁指针本身，安全起见要手动赋值NULL</p>
+</li>
+</ul>
+<h2 id="成员指针"><a href="#成员指针" class="headerlink" title="成员指针"></a>成员指针</h2><ul>
+<li>取成员的偏移地址：<ul>
+<li><code>offsetof(类名, 成员名)</code> 返回偏移字节数</li>
+<li><code>&amp;&lt;类名&gt;::&lt;成员名&gt;</code> 取成员指针（区别于普通的数据指针）</li>
+</ul>
+</li>
+<li>成员指针申明关键字：<code>&lt;类名&gt;::*</code></li>
+<li>成员指针调用：<code>&lt;实例&gt;.*&lt;成员&gt;</code></li>
+</ul>
+<h2 id="移动构造"><a href="#移动构造" class="headerlink" title="移动构造"></a>移动构造</h2><p><code>A::A(A&amp;&amp; q)</code>：适配临时值，优先于深拷贝。逻辑里面要完成体外空间的交接以及原体外空间指针的置空（防止析构出错）。</p>
+<h2 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h2><ul>
+<li>在类体内声明，在类体外定义并初始化</li>
+</ul>
+<p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016082704.png" alt="image-20201016082651927"></p>
+<ul>
+<li>静态函数成员没有this指针，若无参通常只应访问类的 静态数据成员和静态函数成员</li>
+<li>静态函数成员的访问权限及继承规则同普通函数成员没 有区别，可以缺省参数、省略参数以及重载</li>
+</ul>
+<p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016082857.png" alt="image-20201016082856909"></p>
+<ul>
+<li>构造函数、析构函数以及虚函数、常函数等必须有 this 参数，不能声明为static</li>
+<li><code>sizeof(&lt;obj&gt;)</code>不包含静态数据成员</li>
+</ul>
+<h2 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a>单继承</h2><figure class="highlight cpp"><figcaption><span>单继承范式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> &lt;</span>派生类名&gt;: [&lt;派生控制符/继承方式&gt;] &lt;基类名&gt; &#123;</span><br><span class="line">	&lt;派生类新定义成员&gt; </span><br><span class="line">    &lt;派生类重定义基类同名的数据和函数成员&gt;</span><br><span class="line">    &lt;派生类声明恢复基类成员访问权限&gt; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>派生控制权限只降不升</li>
+<li>回复控制权限可升可降，私有不可访</li>
+</ul>
+<p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016090112.png" alt="image-20201016090112713"></p>
+<p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016091854.png" alt="image-20201016091854286"></p>
+<ul>
+<li>C++允许父类指针指向子类对象、父类引用子类对象， 无须通过强制类型转换， 编译时按父类说明的权限访问成员</li>
+</ul>
+<h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201020105251.png" alt="单继承类对象的内存结构" style="zoom:80%;" />
+
+<ul>
+<li><p>纯虚函数：<code>virtual returnType funName(...) = 0</code> （相当于抽象函数），包含纯虚函数的类为抽象类，不论纯虚函数在体外是否有定义。</p>
+</li>
+<li><p>通过指针调用虚方法时才会查虚函数表。数据成员才会随着对象的构造滑入内存，方法不会。</p>
+</li>
+</ul>
+<h2 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h2><h3 id="构造顺序"><a href="#构造顺序" class="headerlink" title="构造顺序"></a>构造顺序</h3><ul>
+<li>画出继承关系树，虚基类用方框框起来；</li>
+</ul>
+<p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027105750.png" alt="image-20201027105750203"></p>
+<h2 id="类的存储空间"><a href="#类的存储空间" class="headerlink" title="类的存储空间"></a>类的存储空间</h2><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027102300.png"></p>
+<h1 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h1><h2 id="可重载类型"><a href="#可重载类型" class="headerlink" title="可重载类型"></a>可重载类型</h2><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027114930.png" alt="image-20201027114930227"></p>
+<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><ol>
+<li>地址类型转换</li>
+<li>数据类型转换</li>
+</ol>
+<ul>
+<li><p><strong>单参数的构造函数具备类型转换作用</strong>，必要时能自动将 参数类型的值转换为要构造的类型。</p>
+</li>
+<li><p>用operator定义强制类型转换函数： <code>operator 类型(…)</code> </p>
+<ul>
+<li>由于转换后的类型就是函数的返回类型， 强制类型转换函数不需要定义返回类。</li>
+</ul>
+</li>
+</ul>
+<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p><img src="https://i.loli.net/2020/11/03/rDp8B3yxFAJedOG.png" alt="image-20201103112636374"></p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>  &lt;模板形参表&gt; </span><br><span class="line">返回类型 函数名 (参数表) &#123;</span><br><span class="line">     &lt;函数体&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>&lt;模板形参表&gt;可以包含一个或多个用逗号分开的参数 </p>
+</li>
+<li><p>每一项均有关键字class或typename引导一个标识符 </p>
+</li>
+<li><p>此标识符为模板参数，表示一种数据类型 </p>
+</li>
+<li><p>类型可以是基本数据类型，也可以是类类型 </p>
+</li>
+<li><p>参数表中至少有一个参数说明 </p>
+</li>
+<li><p>参数在函数体中至少应用一次</p>
+</li>
+</ul>
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>   &lt;模板形参表&gt;  </span><br><span class="line"><span class="class"><span class="keyword">class</span>  类名 &#123;</span></span><br><span class="line">    &lt;类体说明&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/%E5%A4%A7%E9%9B%BE%EF%BC%88%E4%B8%8A%EF%BC%89%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    (no title)
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/Python/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title"></div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            WeiliangBai &copy; 2020 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

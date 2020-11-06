@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>William@Wiki</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2020-06-14T15:10:29.781Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>WeiliangBai</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/"/>
+    <id>http://example.com/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/</id>
+    <published>2020-11-06T08:35:32.784Z</published>
+    <updated>2020-06-14T15:10:29.781Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="每天一个避坑小技巧"><a href="#每天一个避坑小技巧" class="headerlink" title="每天一个避坑小技巧"></a>每天一个避坑小技巧</h1><ul><li><p>解决网站元素（例如图片）加载不出来的方法</p><ol><li>浏览器下审查该元素的URL地址，然后在搜索他的域名对应的地址（<a href="https://tools.ipip.net/domain.php%EF%BC%89">https://tools.ipip.net/domain.php）</a></li><li>将域名解析 “xxx.xxx.xxx.xxx 域名” 加入到hosts文件中（一般在 %SystemRoot%\system32\drivers\etc\ 目录下）  </li><li>cmd 下 ipconfig \flushdns 刷新试试</li><li>刷新浏览器查看效果</li></ol></li><li><p>SSR 解决端口占用问题：</p><ul><li>法一：在 SSR 选项设置里改变端口</li><li>法二：taskkill /pid xxx -f</li></ul></li><li><p>cmd 管理 Process </p><ul><li><code>tasklist</code> 列出所有进程</li><li><code>taskkill /pid xxx -f</code> 杀死指定id process</li><li>找到占用端口的进程号：<code>netstat -aon|findstr &quot;59207&quot;</code></li><li>查看进程所对应的应用程序：<code>tasklist|findstr &quot;1396&quot;</code></li></ul></li><li><p>Powershell、cmd 终端显示编码方式</p><ul><li><code>chcp + (num)</code> 临时更改编码<ul><li><code>437</code>（英语）</li><li><code>65001</code>（utf-8）</li><li><code>936</code>（GBK）</li></ul></li></ul></li><li><p>posh 重定向编码方式</p><ul><li>默认编码：UTF-16LE</li><li>修改方式：<code>&lt;your command&gt; | out-file 1.txt -encoding utf8</code></li></ul></li></ul><h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><ul><li>修改终端字体：用户设置（json）<code>terminal.integrated.fontFamily</code> 字段</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;每天一个避坑小技巧&quot;&gt;&lt;a href=&quot;#每天一个避坑小技巧&quot; class=&quot;headerlink&quot; title=&quot;每天一个避坑小技巧&quot;&gt;&lt;/a&gt;每天一个避坑小技巧&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;解决网站元素（例如图片）加载不出来的方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/"/>
+    <id>http://example.com/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/</id>
+    <published>2020-11-06T08:35:32.782Z</published>
+    <updated>2020-08-06T23:16:45.830Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="微积分复习纲要"><a href="#微积分复习纲要" class="headerlink" title="微积分复习纲要"></a>微积分复习纲要</h1><h2 id="复习重点"><a href="#复习重点" class="headerlink" title="复习重点"></a>复习重点</h2><h3 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h3><ul><li>二阶微分方程的特解形式</li></ul><h3 id="空间向量与空间几何"><a href="#空间向量与空间几何" class="headerlink" title="空间向量与空间几何"></a>空间向量与空间几何</h3><h3 id="多元函数微分学"><a href="#多元函数微分学" class="headerlink" title="多元函数微分学"></a>多元函数微分学</h3><ul><li>几何应用：求不同类型曲面曲线的几何量</li><li>连续，可微，可导以及方向导数之间的关系</li><li>极值与最值</li><li>隐函数的导数</li></ul><h3 id="重积分"><a href="#重积分" class="headerlink" title="重积分"></a>重积分</h3><ul><li>曲面面积的公式$\int\int$</li></ul><h3 id="曲线积分与曲面积分"><a href="#曲线积分与曲面积分" class="headerlink" title="曲线积分与曲面积分"></a>曲线积分与曲面积分</h3><ul><li><p>平面/空间曲线积分与路径无关的4个等价条件</p></li><li><p>格林公式/斯托克斯公式</p></li><li><p>高斯公式</p></li><li><p>第二型与第一型的关系与转换</p></li><li><p>场论初步</p></li></ul><h3 id="无穷级数"><a href="#无穷级数" class="headerlink" title="无穷级数"></a>无穷级数</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;微积分复习纲要&quot;&gt;&lt;a href=&quot;#微积分复习纲要&quot; class=&quot;headerlink&quot; title=&quot;微积分复习纲要&quot;&gt;&lt;/a&gt;微积分复习纲要&lt;/h1&gt;&lt;h2 id=&quot;复习重点&quot;&gt;&lt;a href=&quot;#复习重点&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/"/>
+    <id>http://example.com/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/</id>
+    <published>2020-11-06T08:35:32.781Z</published>
+    <updated>2020-06-19T09:03:51.115Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1. 绪论"></a>1. 绪论</h2><p>​    从文本翻译到文字、语音识别，再到命名实体识别，词性标注，序列标注问题已然渗透到社会生活中的方方面面。不少自然语言处理的问题都可以想方设法转化为序列标注问题：对邮件等”大块“的信息做命名实体识别，识别出信息中的表单项用于自动填写表单，可以有效地提高工作效率，节约时间；对音频文件进行标注分析，可以用来进行语音识别；抽取出来的电子病历文本中的疾病、治疗、检查等类型的实体，可以用以对电子病历进行分类归档……想要处理好一般性的自然语言处理问题到序列标记问题的转化，关键在于处理好如何定义标记的问题。</p><p>​    作为自然语言处理中常见的问题之一，序列标注问题已经由来已久，并在经历了一系列的发展变革后逐渐壮大健全。最早的有传统的隐马尔可夫模型、最大熵模型和条件随机场模型，最大熵模型抛弃了隐马尔科夫模型的独立输出假设，而条件随机场模型又在最大熵模型的基础上进一步将标签的转移扩大为全局特征，使得上下文之间的联系更加紧密。无论是在理论还是实践结果上来看，条件随机场的整体效果都要优于前两种方法。步入深度学习发展的时代后，新的诸如$RNN$和$LSTM$模型也相继用于序列标注问题，有效地改善了传统方法在处理更长的上下文依赖、过拟合、依赖启发式知识等方面的不足之处。本文主要研究和探讨了传统的序列标注模型——隐马尔可夫模型和条件随机场模型——的理论基础和应用实践。</p><a id="more"></a><h2 id="2-正文"><a href="#2-正文" class="headerlink" title="2. 正文"></a>2. 正文</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><p>​    序列标注是指将输入的一串观测序列 $x_1x_2x_3…x_n$ 转化为一串标记序列 $y_1y_2y_3…y_n$ 的过程，要解决序列标记问题，实际上就是要找到一个观测序列到标记序列的映射 $f(x_i)\rightarrow y_i\space (i=1,2,…,n)$。</p><h3 id="2-2-HMM模型"><a href="#2-2-HMM模型" class="headerlink" title="2.2 HMM模型"></a>2.2 HMM模型</h3><h4 id="2-2-1-马尔可夫链"><a href="#2-2-1-马尔可夫链" class="headerlink" title="2.2.1 马尔可夫链"></a>2.2.1 马尔可夫链</h4><p>​    <strong>马尔可夫链</strong>（Markov chain），又称离散时间马尔可夫链，为状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。</p><p>​    从数学形式上来看，对于随机变量序列$X_1X_2X_3…X_n$，满足<br>$$<br>P(X_n=x_n|X_1=x_1,X_2=x_2,X_3=x_3…,X_{n-1}=x_{n-1})=P(X_n=x_n|X_{n-1}=x_{n-1})<br>$$<br>，则称该序列为一个一阶马尔可夫链。</p><p>​    从宏观意义上来看，Markov链说明了在状态转移过程中，“未来”与“过去”无关而只与“现在”有关。</p><p>​    Markov链常常被认为是<strong>时齐</strong>的，即转移概率与n无关。</p><p>​    类似的可以定义<strong>m阶Markov链</strong>，满足<br>$$<br>\begin{aligned}<br>&amp;P(X_n=x_n|X_1=x_1,X_2=x_2,X_3=x_3…,X_{n-1}=x_{n-1})\<br>=&amp;P(X_n=x_n|X_{n-m}=x_{n-m},X_{n-m+1}=x_{n-m+1}…,X_{n-1}=x_{n-1})<br>\end{aligned}<br>$$</p><h4 id="2-2-2-隐马尔可夫模型"><a href="#2-2-2-隐马尔可夫模型" class="headerlink" title="2.2.2 隐马尔可夫模型"></a>2.2.2 隐马尔可夫模型</h4><p>​    <strong>隐马尔可夫模型</strong>（Hidden Markov Model 缩写：HMM）基于Markov链，不同与一般的Markov链，HMM 又加入了<strong>隐变量</strong>这一概念，即该模型包含了观测序列$X_1X_2X_3…X_n$和与它一一对应的标记序列$Y_1Y_2Y_3…Y_n$。该模型用到了两个基本假设：</p><ol><li>时齐的Markov性假设，如2.2.1所述</li><li>独立输出假设，输出状态的概率仅与输入状态相关，而与输入序列的前后文无关</li></ol><p>以图形表示的隐马尔可夫模型如下所示：</p><img src="https://raw.githubusercontent.com/BAIDI-coder/PicGo/master/img/20200614085126.png" alt="graph 1"  /><p>HMM 模型解决了被用来解决序列标注问题中的三个基本问题：预测、平滑和解码。本文主要讨论的解码问题，即求解给定观测序列，给出最有可能的标记序列的问题。本文使用$\lambda(W,T,\pi,\beta,A,B)$来表征一个序列标注问题的HMM模型，其中$W$表示观测序列，$T$表示输出的标记序列，$\pi$表示标记之间的概率转移转移矩阵，$\beta$表示标记到观测值的发射概率，$A$表示输入对象的集合，$B$表示标记的集合。</p><h4 id="2-2-3-概率模型"><a href="#2-2-3-概率模型" class="headerlink" title="2.2.3 概率模型"></a>2.2.3 概率模型</h4><p>问题归结于求解下式<br>$$<br>arg_{T}max\space P(T=t_1t_2…t_n|W=w_1w_2…w_n,\lambda)\qquad (t_i\in B, w_i\in A)\tag{1}<br>$$<br>由贝叶斯概率公式<br>$$<br>P(T|W)=\frac{P(W|T)P(T)}{P(W)}\propto P(W|T)P(T)\tag{2}<br>$$<br>因为 $P(W)=const$ 故而可以省略不予以考虑</p><p>由独立输出假设可知<br>$$<br>P(W|T)=P(w_1|t_1)P(w_2|t_2)…P(w_n|t_n)\tag{3}<br>$$<br>由一阶时齐的Markov性假设可知<br>$$<br>P(T)=P(t_1)P(t_2|t_1)P(t_3|t_2)…P(t_{n}|t_{n-1})\tag{4}<br>$$<br>联立方程 $(2)(3)(4)\Rightarrow$<br>$$<br>P(T|W)\sim [P(t_1)P(w_1|t_1)][P(t_2|t_1)P(w_2|t_2)]…[P(t_n|t_n-1)P(w_n|t_n)]\tag{5}<br>$$<br>其中转移概率由条件概率公式可知<br>$$<br>P(t_i|t_{i-1})=\frac{P(t_i,t_{i-1})}{P(t_{i-1})}\tag{6}<br>$$<br>等式$(6)$中标记值的概率和等式$(5)$中的独立输出概率可由<strong>统计方法</strong>或<strong>规则方法</strong>得出，下面介绍两种方法的异同：</p><table><thead><tr><th>项目</th><th>统计方法</th><th>规则方法</th></tr></thead><tbody><tr><td>介绍</td><td>通过统计得出频率估计概率的方法</td><td>通过既定的规则来估计概率的方法</td></tr><tr><td>优点</td><td>覆盖面广，稳定性高</td><td>精确，对于特殊现象的支持度好</td></tr><tr><td>缺点</td><td>对于特殊现象的支持度差</td><td>规则库庞大，编写和维护复杂，覆盖面不及统计方法</td></tr></tbody></table><p>能够计算出特定$T^*$的概率值$P(T^*|W)$还不够，还要要找到最大的概率对应的$T$。这个问题可以转化成一个求解<strong>最短加权路径</strong>的图论问题。</p><img src="https://raw.githubusercontent.com/BAIDI-coder/PicGo/master/img/20200605231815.png" alt="graph 2" style="zoom:80%;" /><p>可构建像 <em>graph 1</em> 所示的图模型（其余路径未画出）。显然，如果标记的取值有$m$种可能，序列的长度为$n$，那么枚举所有路径然后取加权值最大的路径的算法复杂度为 $O(n^m)$ ，随着序列长度增长而呈指数级增长。为了降低复杂度这里一般采用<em>维特比算法</em> (Viterbi algorithm) 。</p><blockquote><p>The <strong>Viterbi algorithm</strong> is a <a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming</a> <a href="https://en.wikipedia.org/wiki/Algorithm">algorithm</a> for finding the most <a href="https://en.wikipedia.org/wiki/Likelihood_function">likely</a> sequence of hidden states—called the <strong>Viterbi path</strong>—that results in a sequence of observed events, especially in the context of <a href="https://en.wikipedia.org/wiki/Markov_information_source">Markov information sources</a> and <a href="https://en.wikipedia.org/wiki/Hidden_Markov_model">hidden Markov models</a> (HMM).^[2]</p></blockquote><p>维特比算法是一种动态规划算法，用于找出隐藏的最大可能路径（维特比路径）。维特比算法的核心思想在于<strong>全局最优包含局部最优</strong>。考虑从起点到某个中间点的最大加权路径，那么该路径所经过的该中间点的前一个点在同时间上所有点中也一定是加权最大的点。下面给出了Viterbi算法的伪代码。其中$T_1,T_2$分别为保存当前节点最大累计权值的矩阵和保存该节点最大累计权值路径上的上一个节点的矩阵。以下给出了维特比算法的算法伪代码：</p><img src="https://raw.githubusercontent.com/BAIDI-coder/PicGo/master/img/20200614085324.png" style="zoom:80%;" /><blockquote><p>下溢问题：$(5)$ 式中的连乘积中因子有可能过小而下溢为零从而造成整个式子变为0，为了避免这种情况可以考虑取对数化乘积为加法的技巧。</p></blockquote><h4 id="2-2-4-应用"><a href="#2-2-4-应用" class="headerlink" title="2.2.4 应用"></a>2.2.4 应用</h4><p>​    绝大多数自然语言处理问题（Natural Language Processing Problem，简称NLP问题），都可以转化为一个序列标注问题。想要处理好NLP问题到序列标记问题的转化关键在于处理好如何定义标记的问题。例如对于中文分词问题，可以定义标签集合 $T={B,M,E,S}$ ，其中 $B(begin),M(middle),E(end),S(single)$ 分别表示词的开头，中间，结尾和单个字成词；对于词性标注问题，可以在分词处理的基础上让一个词对应一个词性标签。对于命名实体识别问题，可以定义标签集合 $T={BL,ML,EL,BP,MP,EP,BO,MO,EO,N}$ 其中 $B,M,E$ 后面跟着的 $L(location),P(person),O(organization)$ 分别表示地名，人民，机构名，而 $N$ 表示不属于实体的部分。定义好标记之后输入训练好的模型后问题即可求解。</p><h3 id="2-3-CRF-模型"><a href="#2-3-CRF-模型" class="headerlink" title="2.3 CRF 模型"></a>2.3 CRF 模型</h3><h4 id="2-3-1-随机场、马尔可夫随机场、条件随机场"><a href="#2-3-1-随机场、马尔可夫随机场、条件随机场" class="headerlink" title="2.3.1 随机场、马尔可夫随机场、条件随机场"></a>2.3.1 随机场、马尔可夫随机场、条件随机场</h4><p>​    考虑一个空间内各个区域按照某种分布被赋予了某个随机值，这样的场称之为“随机场”。而马尔可夫随机场则是一类特殊的随机场，场中每个点的赋值不仅与自身位置有关，还和相邻位置的赋值相关。如果考虑马尔科夫性的同时将点的赋值概率看做是条件概率，则称该马尔科夫场为条件随机场（Conditional random fields 简称：CRF）。如维基百科中所述<a href="https://en.wikipedia.org/wiki/Conditional_random_field">^3</a>:</p><blockquote><p>Whereas a <a href="https://en.wikipedia.org/wiki/Statistical_classification">classifier</a> predicts a label for a single sample without considering “neighboring” samples, a CRF can take context into account.</p></blockquote><p>​    CRF模型和那些仅仅只考虑自身来进行分类的模型不同之处就在于CRF模型将样本点的“邻居”也考虑在内，这个特点使得CRF模型有能力处理上下文有关联的序列标注的问题。</p><h4 id="2-3-2-线性链条件随机场"><a href="#2-3-2-线性链条件随机场" class="headerlink" title="2.3.2 线性链条件随机场"></a>2.3.2 线性链条件随机场</h4><p>线性链的条件随机场（Linear conditional random fields）是对条件随机场的简化模型：$X=(X1,X2,…Xn),Y=(Y1,Y2,…Yn)$ 均为线性链表示的随机变量序列，在给定随机变量序列$X$的情况下，随机变量$Y$的条件概率分布 $P(Y|X)$ 构成条件随机场，即满足马尔科夫性：<br>$$<br>P(Yi|X,Y1,Y2,…Yn)=P(Yi|X,Yi−1,Yi+1)\tag{7}<br>$$<br>则称 $P(Y|X)$ 为线性链条件随机场。　</p><h4 id="2-3-3-概率模型"><a href="#2-3-3-概率模型" class="headerlink" title="2.3.3 概率模型"></a>2.3.3 概率模型</h4><p>​    为了建立可供学习的CRF模型，可以定义两类特征函数（这些特征函数用来评价一个序列在某些特征方面是否“靠谱”，只有 $1, 0$ 两种取值，即判断是否满足条件）：一类只与当前节点有关，表示为$s_l(y_i,x,i)\space (l=1,2…,m)$；另一类还与前一个节点有关，表示为$t_k(y_{i-1},y_i,x,i)\space (k=1,2…,n)$。引入需要学习的权重参数（所谓“权重”即用来衡量一个判断依据的重要程度的参数）$\lambda_l,\mu_k$，则条件概率表示为<br>$$<br>\begin{aligned}<br>P(y|x)&amp;=\frac{1}{Z(x)}exp(\sum_{i,k}λ<em>kt_k(y_{i−1},y_i,x,i)+\sum_{i,l}μ<em>ls_l(y_i,x,i))\<br>&amp;\propto exp(\sum</em>{i,k}λ_kt_k(y</em>{i−1},y_i,x,i)+\sum_{i,l}μ<em>ls_l(y_i,x,i))<br>\end{aligned}\tag{8}<br>$$<br>$Z(x)$为规范化因子，是所有可能的标注序列的概率和，使得等式右边规范为一个概率。<br>$$<br>Z(x)=\sum</em>{y}exp(\sum_{i,k}λ<em>kt_k(y_{i−1},y_i,x,i)+\sum_{i,l}μ<em>ls_l(y_i,x,i))\tag{9}<br>$$<br>为了使得表示更加方便，将参数 $\lambda,\mu$ 均表示为 $w$ ，特征函数 $t, s$ 均表示为 $f$ ，即有<br>$$<br>w</em>{k}=\left{<br>\begin{aligned}<br>&amp;\lambda_k\qquad &amp;(0 &lt; k \leqslant m)\<br>&amp;\mu_{k-m}\qquad &amp;(m &lt; k \leqslant m+n)<br>\end{aligned}\tag{10}<br>\right.<br>$$<br>$$<br>f</em>{k}(y,x)=\left{<br>\begin{aligned}<br>&amp;\sum_{i}s_k(y_i,x,i)\qquad &amp;(0 &lt; k \leqslant m)\<br>&amp;\sum_{i}t_{k-m}(y_{i-1},y_i,x,i)\qquad &amp;(m &lt; k \leqslant m+n)<br>\end{aligned}\tag{11}<br>\right.<br>$$</p><p>由 $(11)(12)$ 式可将 $(8)$ 式简化为<br>$$<br>P(y|x)=\frac{exp(\sum_k w_kf_k(y,x))}{\sum_yexp(\sum_k w_kf_k(y,x))}\tag{12}<br>\propto exp(\sum_k w_kf_k(y,x))<br>$$</p><h4 id="2-3-4-参数学习"><a href="#2-3-4-参数学习" class="headerlink" title="2.3.4 参数学习"></a>2.3.4 参数学习</h4><p>以下采用梯度下降法来训练参数。</p><p>定义损失函数<br>$$<br>\begin{aligned}<br>L&amp;=-M\<br>&amp;=-log\prod_{x,y}P(y|x)^{\overline{P}(x,y)}\<br>&amp;=-\sum_{x,y}\overline{P}(x,y)logP(y|x)\<br>&amp;=\sum_{x}\overline{P}(x)logZ(x)-\sum_{x,y}\overline{P}(x,y)\sum_k w_kf_k(y,x)\<br>&amp;=\sum_{x}\overline{P}(x)log\sum_{y}exp\big(\sum_k w_kf_k(y,x)\big)-\sum_{x,y}\overline{P}(x,y)\sum_k w_kf_k(y,x)<br>\end{aligned}\tag{13}<br>$$<br>其中$\overline{P}$为先验概率，可以通过统计方法得出。</p><p>对损失函数求导可得：<br>$$<br>\frac{\partial L}{\partial w_k}=\sum_{x,y}\overline{P}(x)P(y|x)f_k(y,x)-\sum_{x,y}\overline{P}(x,y)f_k(y,x)\tag{14}<br>$$</p><p>有了损失函数的导数之后就可以进行迭代优化参数，直到达到收敛条件：<br>$$<br>w_k:=w_k-\eta\cdot\frac{\partial L}{\partial w_k}\tag{15}<br>$$<br>梯度下降法的算法流程为：定义损失函数 $L(w)$、学习率 $\eta\rightarrow$计算梯度 $\frac{\partial L}{\partial w_k}\rightarrow$更新 $w\rightarrow$计算梯度 $\frac{\partial L}{\partial w_k}\rightarrow$更新 $w\rightarrow…\rightarrow$达到收敛条件，得到训练后参数 $w$</p><p>同样的，将训练好的CRF模型用于解码问题也可以采用维特比算法，此处将不再赘述。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-绪论&quot;&gt;&lt;a href=&quot;#1-绪论&quot; class=&quot;headerlink&quot; title=&quot;1. 绪论&quot;&gt;&lt;/a&gt;1. 绪论&lt;/h2&gt;&lt;p&gt;​    从文本翻译到文字、语音识别，再到命名实体识别，词性标注，序列标注问题已然渗透到社会生活中的方方面面。不少自然语言处理的问题都可以想方设法转化为序列标注问题：对邮件等”大块“的信息做命名实体识别，识别出信息中的表单项用于自动填写表单，可以有效地提高工作效率，节约时间；对音频文件进行标注分析，可以用来进行语音识别；抽取出来的电子病历文本中的疾病、治疗、检查等类型的实体，可以用以对电子病历进行分类归档……想要处理好一般性的自然语言处理问题到序列标记问题的转化，关键在于处理好如何定义标记的问题。&lt;/p&gt;
+&lt;p&gt;​    作为自然语言处理中常见的问题之一，序列标注问题已经由来已久，并在经历了一系列的发展变革后逐渐壮大健全。最早的有传统的隐马尔可夫模型、最大熵模型和条件随机场模型，最大熵模型抛弃了隐马尔科夫模型的独立输出假设，而条件随机场模型又在最大熵模型的基础上进一步将标签的转移扩大为全局特征，使得上下文之间的联系更加紧密。无论是在理论还是实践结果上来看，条件随机场的整体效果都要优于前两种方法。步入深度学习发展的时代后，新的诸如$RNN$和$LSTM$模型也相继用于序列标注问题，有效地改善了传统方法在处理更长的上下文依赖、过拟合、依赖启发式知识等方面的不足之处。本文主要研究和探讨了传统的序列标注模型——隐马尔可夫模型和条件随机场模型——的理论基础和应用实践。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://example.com/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
+    <published>2020-11-06T08:35:32.779Z</published>
+    <updated>2020-09-16T07:09:09.380Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h2><ul><li>Learning Map</li></ul><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200629183618.png" alt="Learning Map"></p><ul><li>model = a set of functions</li><li>机器学习三步走：define a set of function - goodness of function - pick the best function</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;课程介绍&quot;&gt;&lt;a href=&quot;#课程介绍&quot; class=&quot;headerlink&quot; title=&quot;课程介绍&quot;&gt;&lt;/a&gt;课程介绍&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Learning Map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/B</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/"/>
+    <id>http://example.com/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/</id>
+    <published>2020-11-06T08:35:32.778Z</published>
+    <updated>2020-11-05T13:21:39.088Z</updated>
+    
+    <content type="html"><![CDATA[<p>教材第三页，以法律现象为研究对象的</p><p>第四页，法学的学科属性，第二段开始。。法学的研究对象</p><p>第五页第三行，法学具有阶级性。。。最后一行：自在的自然现象，客观事物的本质和特征不会，，，</p><p>本身不具有意识形态的特征。。。</p><p>法学研究多采用。。。。等社会科学方法。。。自然科学多采用。。。</p><p>底蕴。。。</p><p>第六页。。。求善。。。第三行以发现客观真理为最终目标</p><p>法学体系。。。第三行。。。互不相同而又相互联系的。。。</p><p>第八页：法学品格。法学不仅有自己。。研究对象。。。而且有自己的研究品格。。。法学是治国之学，为国家的基本治理提供。。。普遍推崇法治。。。</p><p>第九页第二段：法律人的概念</p><p>第十页：法律是人本之学。。。防止人性之恶。。。。</p><p>第十页第五行：权利本位。。。</p><p>法学是正义之学。。。与正义有着密不可分的关系</p><p>第十二页，第一行：法治文明的重要动力。其三。。。根本标准。。。</p><p>围绕正义问题。。。</p><p>法学是对正义的追求而发展起来的。。。</p><p>十六页：法学的产生（填空题）：人类理性的形成，较为广泛的立法，法学家的形成</p><p>二十页：马克思主义法学：这一段的第二行开始。。。马克思和恩格斯合创的，。。。标志着。。。初步形成。。诞生</p><p>二十一页。。。第一行。。。以唯物史观为基础，以。。。。建立了以人为中心。。。从而结束了。。。使得法学成为了一门真正的科学</p><p>三十五页：法的词源：法治的故斜体：</p><p>三十七页：中国古代法学的其它称谓：刑</p><p>三十八页：法律的特性。。。根植于其他社会关系中。。最后一页第一行，。。。法律以人的行为为调整对象。。。规范性的特征。。。具体表现为，。。一般性，适用性。。。。国家机关制定和认可的。。。国家意志性，统一性和普遍。。。</p><p>四十页：法律是规定人权利与义务的规范</p><p>应该怎样做，禁止怎样做。。。。往下第四行，法律具有力道行</p><p>国家强制力。。。最后两行要背</p><p>四十二页：法律的本质：法律的政治本质：经济本质：客观性，</p><p>四十六页：法律概念：”概而言之“开始。。。权威性。。。。法律性、明确性、多样性。。。最后一段第一句话</p><p>四十七页：第二段话：</p><p>法律概念是构成法律的细胞</p><p>四十八页：<strong>法律规则</strong>：最后一行</p><p>五十二页：法律规则的作用：法律规则是法律的主干部分</p><p>五十四页：法律原则：第二段：法律原则是指。。。综合性的。。。具有稳定性较高、覆盖面较广、具有弹性、。。。逻辑结构上比较简单、。。。等特征</p><p>六十一页：倒数第三段第二行：<strong>成文法</strong>即XXX</p><p>下一行法典是。。最具代表性的。。。</p><p>不成文法是未经国家立法机关制定不以法律条文为。。。主要有判例法和习惯法。。。</p><p>六十二页：<strong>填空</strong>：xxx是以<strong>宪法</strong>为核心的各种制定法。。。</p><p>六十六页：法律的类型：以XXX为标准，可以将法律划分为XXX</p><p>六十七页：接上</p><p>六十九页：倒数第三段：法律体系的定义。。。最后一段倒数第二行：法律部门的概念</p><p>七十页：第三行。。。划分法律部门的方式</p><p>当代中国的法律体系：<strong>问答题</strong>：由下面几个法律部门组成：宪法是这个法律体系的基础，是。。。的法律依据。。。指导意义；行政法是指调整。。。的总和。。；民商法是调整。。。的总和；商法是调整。。。的总和；刑法是。。。的总和；社会法是。。。的总和；经济法是。。。的总和；诉讼法是。。。的总和；环境法是。。。的总和；军事法是。。。；文化法。。。；</p><p>74页：<strong>填空</strong>：两大法系</p><p>八十九页：立法的界定：起点和第一步是。。。</p><p>立法的概念：广义和狭义</p><p>九十一页的最后一行：填空题：当代中国的立法体制：一元两极多层次</p><p>立法基本原则：XXX</p><p>九十六页：科学原则：</p><p>九十七页最后一行：立法的程序~九十八页第一行（<strong>填空</strong>）</p><p>101页：（填空）表决和通过法律案是全部立法程序中最具决定意义的阶段</p><p>立法的最后一段程序：</p><p>106页：倒数第三行：法律关系是成熟于。。。</p><p>107页：法律关系的内容是指：法律主体之间的权利与义务</p><p>111页：执法的概念</p><p>113页：执法的特征</p><p>116页：（问答题）执法的基本原则。。。合理性原则</p><p>司法：</p><p>122页：最后一行（填空，XXX是司法的根本，基本原则</p><p>124页：司法法治原则：</p><p>128页：守法行为的概念，守法及其理由</p><p>132页：违法的概念</p><p>152页：法律的人文精神</p><p>164页：法律是】</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;教材第三页，以法律现象为研究对象的&lt;/p&gt;
+&lt;p&gt;第四页，法学的学科属性，第二段开始。。法学的研究对象&lt;/p&gt;
+&lt;p&gt;第五页第三行，法学具有阶级性。。。最后一行：自在的自然现象，客观事物的本质和特征不会，，，&lt;/p&gt;
+&lt;p&gt;本身不具有意识形态的特征。。。&lt;/p&gt;
+&lt;p&gt;法学</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%A6%E6%B3%95%E4%B8%89%E7%AB%A0/"/>
+    <id>http://example.com/wiki/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%BA%A6%E6%B3%95%E4%B8%89%E7%AB%A0/</id>
+    <published>2020-11-06T08:35:32.777Z</published>
+    <updated>2020-09-10T04:31:34.046Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="读书笔记约法三章"><a href="#读书笔记约法三章" class="headerlink" title="读书笔记约法三章"></a>读书笔记约法三章</h1><blockquote><p>“无他，唯手熟尔”</p><p>读书不做笔记，不常常温习约等于没学，重视笔记，舍得投入时间。</p></blockquote><h2 id="一曰："><a href="#一曰：" class="headerlink" title="一曰："></a>一曰：</h2><p>读完一章后提炼出主要知识点，并结合 <strong>自己的理解</strong> 进行记录。必要记忆的算法，代码片段，类、函数等也需要记录以便将来快速复习。</p><h2 id="二曰："><a href="#二曰：" class="headerlink" title="二曰："></a>二曰：</h2><p>读的过程中发现每一章节的联系（理解作者这样编排内容的深意），及时对之前的笔记进行补充说明甚至重新理解。</p><h2 id="三曰："><a href="#三曰：" class="headerlink" title="三曰："></a>三曰：</h2><p>进行二次阅读甚至多次阅读，修改理解不到位的、遗漏的知识点。</p><h2 id="四曰："><a href="#四曰：" class="headerlink" title="四曰："></a>四曰：</h2><p>实际运用书中内容的时候将遇到的问题、积累的经验写在笔记中。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;读书笔记约法三章&quot;&gt;&lt;a href=&quot;#读书笔记约法三章&quot; class=&quot;headerlink&quot; title=&quot;读书笔记约法三章&quot;&gt;&lt;/a&gt;读书笔记约法三章&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;“无他，唯手熟尔”&lt;/p&gt;
+&lt;p&gt;读书不做笔记，不常常温习约等于没</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E5%A4%A7%E9%9B%BE%EF%BC%88%E4%B8%8A%EF%BC%89%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/wiki/%E5%A4%A7%E9%9B%BE%EF%BC%88%E4%B8%8A%EF%BC%89%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-11-06T08:35:32.775Z</published>
+    <updated>2020-08-31T22:39:09.112Z</updated>
+    
+    <content type="html"><![CDATA[<p>大雾（上）复习笔记 </p><h2 id="考试消息"><a href="#考试消息" class="headerlink" title="考试消息"></a>考试消息</h2><img src="D:\Repository\Papers\mine\classicExercise\大学物理\批注 2020-05-25 082547.png" style="zoom:60%;" /><h2 id="重点知识"><a href="#重点知识" class="headerlink" title="重点知识"></a>重点知识</h2><h3 id="流体力学"><a href="#流体力学" class="headerlink" title="流体力学"></a>流体力学</h3><p><img src="D:\Repository\Papers\mine\classicExercise\大学物理\批注 2020-05-27 164837.png" style="zoom:50%;" />雷诺数：$R_e=\frac{\rho vd}{\eta}$, 斯托克斯定律：$f=6\pi\eta rv$</p><h3 id="电介质"><a href="#电介质" class="headerlink" title="电介质"></a>电介质</h3><img src="D:\Repository\Papers\mine\classicExercise\大学物理\批注 2020-05-27 175938.png" style="zoom:60%;" /><h3 id="磁介质"><a href="#磁介质" class="headerlink" title="磁介质"></a>磁介质</h3><p><img src="C:\Users\86173\AppData\Roaming\Typora\typora-user-images\image-20200601095203595.png" alt="image-20200601095203595"></p><p>==矫正==：$i’=M \times n_0$</p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831161909.png" alt="image-20200831161909891"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831162010.png" alt="image-20200831162010299"></p><h3 id="电偶极子"><a href="#电偶极子" class="headerlink" title="电偶极子"></a>电偶极子</h3><ul><li>匀强电场中电偶极子收到的力矩：<img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831162454.png" alt="image-20200831162454265" style="zoom: 50%;" /></li><li>匀强电场与电偶极子的相互作用能：<img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831162702.png" alt="image-20200831162702081" style="zoom: 67%;" /></li><li>由负电荷指向正电荷</li><li>磁力矩：<img src="C:\Users\86173\AppData\Roaming\Typora\typora-user-images\大雾（上）复习笔记\image-20200901063206541.png" alt="image-20200901063206541" style="zoom:50%;" /></li></ul><h3 id="电磁感应"><a href="#电磁感应" class="headerlink" title="电磁感应"></a>电磁感应</h3><p><img src="C:\Users\86173\AppData\Roaming\Typora\typora-user-images\image-20200601095600097.png" alt="image-20200601095600097"></p><h3 id="导体"><a href="#导体" class="headerlink" title="导体"></a>导体</h3><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200829172458.png" alt="image-20200829172458374"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200829172839.png" alt="image-20200829172839213"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200829172914.png" alt="image-20200829172914198"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200829173646.png" alt="image-20200829173645791"></p><h3 id="洛伦兹变换"><a href="#洛伦兹变换" class="headerlink" title="洛伦兹变换"></a>洛伦兹变换</h3><p><img src="C:\Users\86173\AppData\Roaming\Typora\typora-user-images\image-20200829162801155.png" alt="image-20200829162801155"></p><p><img src="C:\Users\86173\AppData\Roaming\Typora\typora-user-images\image-20200829162721661.png" alt="image-20200829162721661"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831210352.png" alt="image-20200831210352136"></p><h3 id="转动惯量"><a href="#转动惯量" class="headerlink" title="转动惯量"></a>转动惯量</h3><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831160355.png"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831160556.png" alt="image-20200831160556153"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831160723.png" alt="image-20200831160722976"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200831161324.png" alt="image-20200831161324579"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;大雾（上）复习笔记 &lt;/p&gt;
+&lt;h2 id=&quot;考试消息&quot;&gt;&lt;a href=&quot;#考试消息&quot; class=&quot;headerlink&quot; title=&quot;考试消息&quot;&gt;&lt;/a&gt;考试消息&lt;/h2&gt;&lt;img src=&quot;D:\Repository\Papers\mine\classicExer</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/%E5%A4%A7%E4%BA%8C%E4%B8%8A%20C++/"/>
+    <id>http://example.com/wiki/%E5%A4%A7%E4%BA%8C%E4%B8%8A%20C++/</id>
+    <published>2020-11-06T08:35:32.773Z</published>
+    <updated>2020-11-03T03:31:06.046Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++基础"></a>C++基础</h1><blockquote><p>重点：const、引用类型</p></blockquote><h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>强类型，类型转换需要显示说明</p><p><code>const float == float  const</code></p><p>const 限定成员函数：<code>class obj &#123; int fc() const &#125;</code></p><ul><li>定义一个常量，必须在定义时，赋初值； </li><li> 常量不能在赋值号左边出现； </li><li> 常量可以在赋值号右边出现； </li><li>常量的地址，只能赋值给一个常量指针</li></ul><p>常量的地址，可以进行强制地址类型转换； 转换后，可以在赋值号左右都出现</p><p><code>volitile</code> 修饰类型：易失性，访问该变量的时候直接访问内存单元而不会代换掉。</p><p>绕过<code>const</code>的方法：对其地址进行强制类型转换，再解析。</p><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><h2 id="左右值"><a href="#左右值" class="headerlink" title="左右值"></a>左右值</h2><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201002081502.png" alt="image-20201002081432622"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201002081452.png" alt="image-20201002081452412"></p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>函数调用时按参数列表从右至左顺序压入栈区</p><h1 id="C-类"><a href="#C-类" class="headerlink" title="C++ 类"></a>C++ 类</h1><blockquote><p>关键字：深拷贝、浅拷贝</p></blockquote><h2 id="构造与析构"><a href="#构造与析构" class="headerlink" title="构造与析构"></a>构造与析构</h2><p><strong>若程序员没有主动给类定义构造函数，编译器自动给一个缺省的构造函数。一旦程序员定义了一个构造函数，系统将不会再给出缺省构造函数。除了系统缺省的构造函数外，只要构造函数无参或者参数有缺省值， 编译器会认为它就是缺省构造函数。缺省的构造函数同时只能有1个。</strong></p><p><code>对象数组初始化构造器：ARRAY[5] = &#123;&#123;ARRAY[0]的构造参数&#125;, ...&#125;</code></p><p>析构函数一般用来释放体外空间，不用来释放本结点空间。</p><h2 id="浅拷贝的危害"><a href="#浅拷贝的危害" class="headerlink" title="浅拷贝的危害"></a>浅拷贝的危害</h2><p>当实例中有指针指向堆区内存时，浅拷贝得到的指针指向<strong>同一堆区空间</strong>，析构的时候就会相互影响</p><p>默认浅拷贝构造函数：<code>Student(stu)</code></p><p>非法的复制构造函数：<code>Student(Student a)</code></p><p>自定义深拷贝构造函数：<code>Student(const Student &amp;a)</code></p><h2 id="new-和-delete"><a href="#new-和-delete" class="headerlink" title="new 和 delete"></a>new 和 delete</h2><ul><li><p><code>new &lt;类型表达式&gt;</code></p></li><li><p><code>delete &lt;指针&gt;          delete  sq;</code></p><ul><li>指针指向非数组的单个实体</li><li>如sq指向对象，则自动调用析构函数，再释放对象所占的内存。</li></ul></li><li><p><code>delete [ ] &lt;数组指针&gt;    delete [] aq;</code></p><ul><li><p>指针指向任意维的数组时使用 </p></li><li><p> 对所有对象(元素) 自动调用析构函数。</p></li><li><p>若数组元素为简单类型，则可用<code>delete &lt;指针&gt;</code>代替</p></li></ul></li><li><p>delete 并不会销毁指针本身，安全起见要手动赋值NULL</p></li></ul><h2 id="成员指针"><a href="#成员指针" class="headerlink" title="成员指针"></a>成员指针</h2><ul><li>取成员的偏移地址：<ul><li><code>offsetof(类名, 成员名)</code> 返回偏移字节数</li><li><code>&amp;&lt;类名&gt;::&lt;成员名&gt;</code> 取成员指针（区别于普通的数据指针）</li></ul></li><li>成员指针申明关键字：<code>&lt;类名&gt;::*</code></li><li>成员指针调用：<code>&lt;实例&gt;.*&lt;成员&gt;</code></li></ul><h2 id="移动构造"><a href="#移动构造" class="headerlink" title="移动构造"></a>移动构造</h2><p><code>A::A(A&amp;&amp; q)</code>：适配临时值，优先于深拷贝。逻辑里面要完成体外空间的交接以及原体外空间指针的置空（防止析构出错）。</p><h2 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h2><ul><li>在类体内声明，在类体外定义并初始化</li></ul><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016082704.png" alt="image-20201016082651927"></p><ul><li>静态函数成员没有this指针，若无参通常只应访问类的 静态数据成员和静态函数成员</li><li>静态函数成员的访问权限及继承规则同普通函数成员没 有区别，可以缺省参数、省略参数以及重载</li></ul><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016082857.png" alt="image-20201016082856909"></p><ul><li>构造函数、析构函数以及虚函数、常函数等必须有 this 参数，不能声明为static</li><li><code>sizeof(&lt;obj&gt;)</code>不包含静态数据成员</li></ul><h2 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a>单继承</h2><figure class="highlight cpp"><figcaption><span>单继承范式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> &lt;</span>派生类名&gt;: [&lt;派生控制符/继承方式&gt;] &lt;基类名&gt; &#123;</span><br><span class="line">&lt;派生类新定义成员&gt; </span><br><span class="line">    &lt;派生类重定义基类同名的数据和函数成员&gt;</span><br><span class="line">    &lt;派生类声明恢复基类成员访问权限&gt; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>派生控制权限只降不升</li><li>回复控制权限可升可降，私有不可访</li></ul><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016090112.png" alt="image-20201016090112713"></p><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201016091854.png" alt="image-20201016091854286"></p><ul><li>C++允许父类指针指向子类对象、父类引用子类对象， 无须通过强制类型转换， 编译时按父类说明的权限访问成员</li></ul><h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201020105251.png" alt="单继承类对象的内存结构" style="zoom:80%;" /><ul><li><p>纯虚函数：<code>virtual returnType funName(...) = 0</code> （相当于抽象函数），包含纯虚函数的类为抽象类，不论纯虚函数在体外是否有定义。</p></li><li><p>通过指针调用虚方法时才会查虚函数表。数据成员才会随着对象的构造滑入内存，方法不会。</p></li></ul><h2 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h2><h3 id="构造顺序"><a href="#构造顺序" class="headerlink" title="构造顺序"></a>构造顺序</h3><ul><li>画出继承关系树，虚基类用方框框起来；</li></ul><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027105750.png" alt="image-20201027105750203"></p><h2 id="类的存储空间"><a href="#类的存储空间" class="headerlink" title="类的存储空间"></a>类的存储空间</h2><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027102300.png"></p><h1 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h1><h2 id="可重载类型"><a href="#可重载类型" class="headerlink" title="可重载类型"></a>可重载类型</h2><p><img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20201027114930.png" alt="image-20201027114930227"></p><h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><ol><li>地址类型转换</li><li>数据类型转换</li></ol><ul><li><p><strong>单参数的构造函数具备类型转换作用</strong>，必要时能自动将 参数类型的值转换为要构造的类型。</p></li><li><p>用operator定义强制类型转换函数： <code>operator 类型(…)</code> </p><ul><li>由于转换后的类型就是函数的返回类型， 强制类型转换函数不需要定义返回类。</li></ul></li></ul><h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p><img src="https://i.loli.net/2020/11/03/rDp8B3yxFAJedOG.png" alt="image-20201103112636374"></p><h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>  &lt;模板形参表&gt; </span><br><span class="line">返回类型 函数名 (参数表) &#123;</span><br><span class="line">     &lt;函数体&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><p>&lt;模板形参表&gt;可以包含一个或多个用逗号分开的参数 </p></li><li><p>每一项均有关键字class或typename引导一个标识符 </p></li><li><p>此标识符为模板参数，表示一种数据类型 </p></li><li><p>类型可以是基本数据类型，也可以是类类型 </p></li><li><p>参数表中至少有一个参数说明 </p></li><li><p>参数在函数体中至少应用一次</p></li></ul><h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>   &lt;模板形参表&gt;  </span><br><span class="line"><span class="class"><span class="keyword">class</span>  类名 &#123;</span></span><br><span class="line">    &lt;类体说明&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;C-基础&quot;&gt;&lt;a href=&quot;#C-基础&quot; class=&quot;headerlink&quot; title=&quot;C++基础&quot;&gt;&lt;/a&gt;C++基础&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;重点：const、引用类型&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;const&quot;&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/Python/"/>
+    <id>http://example.com/wiki/Python/</id>
+    <published>2020-11-06T08:35:32.772Z</published>
+    <updated>2020-06-12T06:05:25.158Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Python-入坑笔记"><a href="#Python-入坑笔记" class="headerlink" title="Python 入坑笔记"></a>Python 入坑笔记</h1><ul><li><code>t = (1)</code>定义的不是tuple，是<code>1</code>这个数！这是因为括号<code>()</code>既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义，因此，Python规定，这种情况下，按小括号进行计算，计算结果自然是<code>1</code>。所以，只有1个元素的tuple定义时必须加一个逗号<code>,</code>，来消除歧义 <code>t = (1,)</code></li><li><strong>动态类型</strong>语言，变量基于引用。</li><li>只要<code>x</code>是非零数值、非空字符串、非空list等，就判断为<code>True</code>，否则为<code>False</code>。</li><li>默认参数是程序创建伊始时自动创建的一个变量的引用，故而有义务使默认参数指向一个不变的对象，如整数类型，字符串类型，而不能是List这种可变类型。</li><li><strong>返回闭包</strong>时牢记一点：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</li></ul><h2 id="Python-生成器-amp-迭代器"><a href="#Python-生成器-amp-迭代器" class="headerlink" title="Python 生成器&amp;迭代器"></a>Python 生成器&amp;迭代器</h2><h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><ul><li>列表生成器: <code>[... for ... in ... if ...]</code></li><li>Iterator 生成器: <code>(... for ... in ... if ...)</code></li><li>生成式函数: <code>yeild</code>关键词，调用一次生成式函数就相当于创建了一个<code>Iterator</code>对象</li></ul><h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><ul><li><code>Iterable</code>是可迭代对象，**<code>Iterable</code>是指那些可以用于<code>for-in</code>迭代的对象**，包括集合对象<code>list,dict,set,map,str</code>和<code>generator</code></li><li><code>Iterator</code>是迭代器，**<code>Iterator</code>是指那些可以作用到<code>next()</code>上的对象**。<code>Iterator</code>是“惰性”的，只会按需迭代生成，可以用<code>list()</code>等转化为“非惰性”的列表。<code>Iterator</code>可能是一个无限的数据流。可以用<code>iter()</code>创建一个<code>Iterator</code>，<code>Iterator</code>可以用<code>next()</code>函数迭代。<code>Iterator</code>包括<code>generator</code>。</li><li><code>Iterator, Iterable</code>均可以用于<code>for-in</code>循环。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Python-入坑笔记&quot;&gt;&lt;a href=&quot;#Python-入坑笔记&quot; class=&quot;headerlink&quot; title=&quot;Python 入坑笔记&quot;&gt;&lt;/a&gt;Python 入坑笔记&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;t = (1)&lt;/code&gt;定义的不是tup</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/my/"/>
+    <id>http://example.com/wiki/my/</id>
+    <published>2020-11-06T08:35:32.770Z</published>
+    <updated>2020-11-05T03:49:01.867Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/LatexTikz/"/>
+    <id>http://example.com/wiki/LatexTikz/</id>
+    <published>2020-11-06T08:35:32.769Z</published>
+    <updated>2020-05-21T04:51:01.375Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Tikz-绘图学习笔记"><a href="#Tikz-绘图学习笔记" class="headerlink" title="Tikz 绘图学习笔记"></a>Tikz 绘图学习笔记</h1><blockquote><p>注意事项: \begin{tikzpicture} 环境下每一行命令结尾都要加分号;</p><p>\node, \coordinate, \draw 语法参考：<a href="https://zhuanlan.zhihu.com/p/84943429">https://zhuanlan.zhihu.com/p/84943429</a></p></blockquote><h2 id="node-描点-coordinate-拟点-draw-画线-fill-填充"><a href="#node-描点-coordinate-拟点-draw-画线-fill-填充" class="headerlink" title="\node 描点, \coordinate 拟点, \draw 画线, \fill 填充"></a>\node 描点, \coordinate 拟点, \draw 画线, \fill 填充</h2><ul><li>参考网站: <ul><li>路径与坐标：<a href="https://www.latexstudio.net/archives/51602.html">https://www.latexstudio.net/archives/51602.html</a></li><li>node 控制：<a href="https://www.latexstudio.net/archives/51617.html">https://www.latexstudio.net/archives/51617.html</a></li><li>线条控制: <a href="https://www.latexstudio.net/archives/51622.html">https://www.latexstudio.net/archives/51622.html</a></li></ul></li><li>示例代码:</li></ul><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\node</span> at (A)[circle,fill,inner sep=1pt]&#123;&#125;;</span><br><span class="line"><span class="comment">%        点名          属性              </span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Tikz-绘图学习笔记&quot;&gt;&lt;a href=&quot;#Tikz-绘图学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Tikz 绘图学习笔记&quot;&gt;&lt;/a&gt;Tikz 绘图学习笔记&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;注意事项: \begin{tikzpict</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/Kotlin/"/>
+    <id>http://example.com/wiki/Kotlin/</id>
+    <published>2020-11-06T08:35:32.767Z</published>
+    <updated>2020-07-22T02:27:01.994Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Kotlin-学习笔记"><a href="#Kotlin-学习笔记" class="headerlink" title="Kotlin 学习笔记"></a>Kotlin 学习笔记</h1><ul><li>Kotlin 可以编译成Java字节码，也可以编译成 JavaScript，方便在没有 JVM 的设备上运行。</li><li>kotlin源文件不需要相匹配的目录和包，源文件可以放在任何文件目录。</li><li>$a 和 ${a.func()}我是真没话说。</li><li>完善的NULL检查机制 “!!, ?, ?:”（当一个引用可能为 null 值时, 对应的类型声明必须明确地标记为可为 null。方法是： “Type后 + ？”）</li><li>玩转for循环：可以方便的指定遍历的步长，范围。（ .., step, downTo, in, until)</li><li>Kotlin 的基本数值类型包括 Byte、Short、Int、Long、Float、Double 等。<strong>不同于 Java 的是，字符==不属于==数值类型</strong>，是一个独立的数据类型。</li><li>支持二进制字面量，数值类型混入下划线增加语义性。</li><li>有些时候较小类型不会隐式转换成较大类型，需要手动调用 .toXXX() 来进行显示的类型转换。</li><li>和 <em>golang</em> 一样少了分号（这就是语法糖吗i了i了</li><li>if-else 语句与when语句等可以视为 ==表达式==（可赋值</li><li>when 与 -&gt; 符号构成强大的分支控制。</li><li>完全抛弃<em>基本数据类型</em>改用<em>对象数据类型</em>“。</li><li>“fun xxx() = xxx” 这个语法糖结合 if else, when 等特性可以打出漂亮的组合拳。</li><li>class 继承的时候对继承的父类后面<em>一般</em>要加括号（因为 java 继承中必调用父类构造函数）且此构造函数必调用主构造函数。</li><li>Java 与 Kotlin 访问修饰符对照表</li></ul><table><thead><tr><th>修饰符</th><th>Java</th><th>Kotlin</th></tr></thead><tbody><tr><td>pubilc</td><td>所有类可见</td><td>所有类可见（默认修饰符）</td></tr><tr><td>private</td><td>当前类可见</td><td>当前类可见</td></tr><tr><td>protected</td><td>当前类，子类，同意包路径下的类可见</td><td>当前类，子类可见</td></tr><tr><td>default</td><td>同一包目录下的类可见（默认修饰符）</td><td>无</td></tr><tr><td>internal</td><td>无</td><td>同一模块下的类可见</td></tr></tbody></table><ul><li><p>语法糖: 原生支持数据类、单例类 （自动完成 toString(), hashCode(), equals() 等方法）</p><ul><li><p>Java 数据类代码示例</p></li><li><pre><code class="java">public class Cellphone &#123;    String brand;    double price;    public Cellphone(String brand, double price) &#123;        this.brand = brand;        this.price = price;    &#125;    @Override    public boolean equals(Object obj) &#123;        if (obj instanceof Cellphone) &#123;            Cellphone other = (Cellphone) obj;            return other.brand.equals(brand) &amp;&amp; other.price == price;        &#125;        return false;    &#125;    @Override    public int hashCode() &#123;        return brand.hashCode() + (int) price;    &#125;    @Override    public String toString() &#123;        return &quot;Cellphone(brand=&quot; + brand + &quot;, price=&quot; + price + &quot;)&quot;;    &#125;&#125;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Kotlin 数据类代码示例</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96; kotlin</span><br><span class="line">  data class Cellphone(val brand: String, val price: Double)&#x2F;&#x2F;加一个data即可</span><br></pre></td></tr></table></figure></code></pre></li><li><p>Java 单例类代码示例</p></li><li><pre><code class="java">public class Singleton &#123;    private static Singleton instance;    private Singleton() &#123;&#125;    public synchronized static Singleton getInstance() &#123;        if (instance == null) &#123;            instance = new Singleton();        &#125;        return instance;    &#125;    public void singletonTest() &#123;        System.out.println(&quot;singletonTest is called.&quot;);    &#125;&#125;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Kotlin 单例类代码示例</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;kotlin</span><br><span class="line">  object Singleton &#123;&#x2F;&#x2F;只需要用object代替class即可</span><br><span class="line">      fun singletonTest() &#123;</span><br><span class="line">          println(&quot;singletonTest is called.&quot;)</span><br><span class="line">      &#125;&#x2F;&#x2F;这里相当于一个静态方法</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></code></pre></li></ul></li><li><p>Kotlin class 类</p></li></ul><table><thead><tr><th>语言</th><th>实例的Class对象</th><th>类的Class对象</th></tr></thead><tbody><tr><td>Kotlin</td><td>javaclass</td><td>类名::class.java</td></tr><tr><td>Java</td><td>(this).getclass()</td><td>类名.class</td></tr></tbody></table><ul><li><p>Kotlin 标准函数</p><ul><li><p>一系列定义于 Standard.kt 里的函数</p></li><li><p>参照表</p></li></ul></li></ul><table><thead><tr><th>函数</th><th>特点</th><th>代码段</th></tr></thead><tbody><tr><td><code>let()</code></td><td>调用let的对象作为Lamda的<strong>参数</strong>，返回最后一行</td><td><code>obj.let &#123;(obj2 -&gt;) //obj2是obj&#125;</code></td></tr><tr><td><code>with()</code></td><td>传入对象作为Lambda的上下文，返回最后一行</td><td><code>with(obj) &#123;//obj上下文&#125;</code></td></tr><tr><td><code>run()</code></td><td>调用run的对象作为Lamda的上下文，返回最后一行</td><td><code>obj.run &#123;//obj上下文&#125;</code></td></tr><tr><td><code>apply()</code></td><td>调用apply的对象作为Lamda的上下文，<strong>返回原对象</strong></td><td><code>obj.apply &#123;//obj上下文&#125;</code></td></tr></tbody></table><ul><li>Kotlin “静态方法调用”<ul><li>单例类 <code>objetc &#123;&#125;</code></li><li>伴生类 <code>companion object &#123;&#125;</code></li><li>顶层方法 <code>fun xxx()</code>，可以被任意Kotlin代码直接调用，<em>文件名作为类还可以用于java静态方法调用</em></li><li><code>@JvmStatic</code> 注释，<em>只能加注在单例类方法或伴生类方法上，使其编译成java静态方法</em></li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Kotlin-学习笔记&quot;&gt;&lt;a href=&quot;#Kotlin-学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Kotlin 学习笔记&quot;&gt;&lt;/a&gt;Kotlin 学习笔记&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Kotlin 可以编译成Java字节码，也可以编译成 J</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/Kotlin%20%E8%BF%9B%E9%98%B6%E8%AF%BE%E5%A0%82/"/>
+    <id>http://example.com/wiki/Kotlin%20%E8%BF%9B%E9%98%B6%E8%AF%BE%E5%A0%82/</id>
+    <published>2020-11-06T08:35:32.765Z</published>
+    <updated>2020-09-16T02:47:38.358Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/JavaLearning/"/>
+    <id>http://example.com/wiki/JavaLearning/</id>
+    <published>2020-11-06T08:35:32.764Z</published>
+    <updated>2020-05-27T12:56:31.745Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2020-4-28"><a href="#2020-4-28" class="headerlink" title="2020-4-28"></a>2020-4-28</h1><ul><li><p>content: 对象与类，基本数据类型</p></li><li><p>int a, b; 则“a=b”表达式为int类型，不会自动转化为boolean类型</p></li><li><p>Java 的匿名内部类</p><ul><li><pre><code class="java">//定义语法new 父类构造器（实参列表) | 实现接口()    //必须继承一个父类或接口&#123;      //匿名内部类的类体部分&#125;/** * 规范： *    匿名类的声明是由java编译器自动派生自一个类实例创建表达式。 *    匿名类永远不能是抽象的。 *    匿名类总是隐式的final。 *    匿名类总是一个内部类；并且不能是static的。 */</code></pre></li><li><p><strong>注意</strong>：</p><ol><li>使用匿名内部类时，我们必须是继承一个类或者实现一个接口，但是两者不可兼得，同时也只能继承一个类或者实现一个接口。</li><li>匿名内部类中是不能定义构造函数的。</li><li>匿名内部类中不能存在任何的静态成员变量和静态方法。</li><li>匿名内部类为局部内部类，所以局部内部类的所有限制同样对匿名内部类生效。</li><li>匿名内部类不能是抽象的，它必须要实现继承的类或者实现的接口的所有抽象方法。</li></ol></li><li><p>内部类的class文件命名是：主类＋$＋内部类名</p></li><li><p>匿名类的class文件命名是：主类＋$＋(1,2,3….)</p></li></ul></li><li><p>class 对象</p><ul><li>获取方式：有三种获得Class对象的方式：<ol><li> Class.forName(“类的全限定名”)</li><li> 实例对象.getClass()</li><li> 类名.class （类字面常量）</li></ol></li><li>每个类的运行时的<strong>类型信息</strong>就是用Class对象表示的</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;2020-4-28&quot;&gt;&lt;a href=&quot;#2020-4-28&quot; class=&quot;headerlink&quot; title=&quot;2020-4-28&quot;&gt;&lt;/a&gt;2020-4-28&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;content: 对象与类，基本数据类型&lt;/p&gt;
+&lt;/li&gt;
+&lt;l</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/Java&amp;Kotlin%E8%AF%AD%E6%B3%95%E5%AF%B9%E7%85%A7/"/>
+    <id>http://example.com/wiki/Java&amp;Kotlin%E8%AF%AD%E6%B3%95%E5%AF%B9%E7%85%A7/</id>
+    <published>2020-11-06T08:35:32.762Z</published>
+    <updated>2020-05-28T23:55:48.641Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java-amp-Kotlin-的语法片段对照"><a href="#Java-amp-Kotlin-的语法片段对照" class="headerlink" title="Java &amp; Kotlin 的语法片段对照"></a>Java &amp; Kotlin 的语法片段对照</h1><h2 id="函数式-API"><a href="#函数式-API" class="headerlink" title="函数式 API"></a>函数式 API</h2><ul><li><p>Java</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入接口类型的实例（或继承了接口的匿名类）</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">public interface Runnable &#123;</span></span><br><span class="line"><span class="comment">void Run();</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//执行逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).start()</span><br></pre></td></tr></table></figure></li><li><p>Kotlin</p><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入Lambda表达式（单抽象的接口类型也可简化为Lambda表达式后传入）</span></span><br><span class="line">Thread &#123;</span><br><span class="line">    <span class="comment">//执行逻辑</span></span><br><span class="line">&#125;.start()</span><br></pre></td></tr></table></figure></li></ul><h2 id="访问控制"><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h2><table><thead><tr><th>修饰符</th><th>Java</th><th>Kotlin</th></tr></thead><tbody><tr><td>pubilc</td><td>所有类可见</td><td>所有类可见（默认修饰符）</td></tr><tr><td>private</td><td>当前类可见</td><td>当前类可见</td></tr><tr><td>protected</td><td>当前类，子类，同意包路径下的类可见</td><td>当前类，子类可见</td></tr><tr><td>default</td><td>同一包目录下的类可见（默认修饰符）</td><td>无</td></tr><tr><td>internal</td><td>无</td><td>同一模块下的类可见</td></tr></tbody></table><h2 id="Class-对象引用"><a href="#Class-对象引用" class="headerlink" title="Class 对象引用"></a>Class 对象引用</h2><table><thead><tr><th>语言</th><th>实例的Class对象</th><th>类的Class对象</th></tr></thead><tbody><tr><td>Kotlin</td><td>javaclass</td><td>类名::class.java</td></tr><tr><td>Java</td><td>(this).getclass()</td><td>类名.class</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Java-amp-Kotlin-的语法片段对照&quot;&gt;&lt;a href=&quot;#Java-amp-Kotlin-的语法片段对照&quot; class=&quot;headerlink&quot; title=&quot;Java &amp;amp; Kotlin 的语法片段对照&quot;&gt;&lt;/a&gt;Java &amp;amp; Kotl</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/Ideas/"/>
+    <id>http://example.com/wiki/Ideas/</id>
+    <published>2020-11-06T08:35:32.761Z</published>
+    <updated>2020-05-25T00:05:27.137Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Williams’s-Fantastic-Ideas"><a href="#Williams’s-Fantastic-Ideas" class="headerlink" title="Williams’s Fantastic Ideas"></a>Williams’s Fantastic Ideas</h1><blockquote><p>Github 有一个叫做 <strong>app ideas</strong> 的仓库有很多好的项目</p></blockquote><ul><li>根据图片定位到视频中的某一帧</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Williams’s-Fantastic-Ideas&quot;&gt;&lt;a href=&quot;#Williams’s-Fantastic-Ideas&quot; class=&quot;headerlink&quot; title=&quot;Williams’s Fantastic Ideas&quot;&gt;&lt;/a&gt;Williams</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/IDEA%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/wiki/IDEA%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-11-06T08:35:32.759Z</published>
+    <updated>2020-05-28T08:01:26.598Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="IDEA基础功能概览："><a href="#IDEA基础功能概览：" class="headerlink" title="IDEA基础功能概览："></a>IDEA基础功能概览：</h1><ul><li><p>shortcut(edit, 代码片段, 功能), 版本控制(VCS: git, github, local history)</p></li><li><p>Debug, javadoc generator, database, web deployment</p></li><li><p>project&amp;module 等概念, 模板, 项目结构查询管理</p></li></ul><h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><ul><li>代码段：main</li><li>sout标准输出</li><li>soutv输出变量，soutm输出方法名，soutp输出命令行参数</li><li>变量名.sout输出变量</li><li>iter增强型for循环</li><li>引用名.for 迭代指定引用类型</li><li>实例名.fori顺序遍历 xxx.forr倒序遍历</li><li>ifn –”if xxx is null”, inn –”if not null”</li><li>xxx.nn, xxx.ifn</li><li>JavaLea</li><li>条件断点 –右键断点处</li><li>ctrl+u 查看表达式的值</li><li>Tools javadoc generator:</li><li>Local: zh_CN; Other command line args: encoding UTF-8 -charset UTF-8</li><li>IDE 常用快捷键对照表（原始来源: <a href="https://www.jianshu.com/p/6267a7d76018">https://www.jianshu.com/p/6267a7d76018</a> )</li></ul><table><thead><tr><th>操作</th><th>eclipse</th><th>IDEA</th><th>Visual Studio Code</th><th>Sublime</th></tr></thead><tbody><tr><td><strong>编辑 Editing</strong></td><td></td><td></td><td></td><td></td></tr><tr><td>格式化代码 Format Code</td><td><code>Ctrl+Shift+F</code></td><td><code>Ctrl+Shift+L</code></td><td><code>Shift+Alt+F</code></td><td>无</td></tr><tr><td>删除行 Delete Line</td><td><code>Ctrl+D</code></td><td><code>Ctrl+Y</code></td><td><code>Ctrl+Shift+K</code></td><td><code>Ctrl+Shift+K</code></td></tr><tr><td>复制行 Copy Line</td><td></td><td><code>Ctrl+C</code></td><td><code>Ctrl+C</code></td><td><code>Ctrl+C</code></td></tr><tr><td>剪切行 Cut Line</td><td></td><td><code>Ctrl+X</code></td><td><code>Ctrl+X</code></td><td><code>Ctrl+X</code></td></tr><tr><td>重复行 Duplicate Line</td><td><code>Ctrl+Shift+Up/Down</code></td><td><code>Ctrl+D</code></td><td><code>Alt+Shift+Up/Down</code></td><td><code>Ctrl+Shift+D</code></td></tr><tr><td>移动行 Move Line</td><td><code>Alt+Up/Down</code></td><td><code>Alt+Shift+Up/Down</code></td><td><code>Alt+Up/Down</code></td><td><code>Ctrl+Shift+Up/Down</code></td></tr><tr><td>换行 New Line</td><td><code>Shift+Enter</code></td><td><code>Shift+Enter</code></td><td><code>Shift+Enter</code></td><td><code>Ctrl+Enter</code></td></tr><tr><td>插入上行 Insert Line Above</td><td><code>Ctrl+Shift+Enter</code></td><td><code>Ctrl+Alt+Enter</code></td><td><code>Ctrl+Shift+Enter</code></td><td><code>Ctrl+Shift+Enter</code></td></tr><tr><td>注释 Comment</td><td><code>Ctrl+/</code></td><td><code>Ctrl+/</code></td><td><code>Ctrl+/</code></td><td><code>Ctrl+/</code></td></tr><tr><td>块注释 Block Comment</td><td><code>Ctrl+Shift+/</code> <code>Ctrl+Shift+\</code></td><td><code>Ctrl+Shift+/</code></td><td></td><td><code>Ctrl+Shift+/</code></td></tr><tr><td>选择块 Block Selection</td><td><code>Alt+Shift+Up/Down</code></td><td><code>Ctrl+W</code> <code>Ctrl+Shift+W</code></td><td><code>Alt+Shift+Right/Left</code></td><td></td></tr><tr><td>优化导包 Optimize Imports</td><td><code>Ctrl+Shift+O</code></td><td><code>Ctrl+Alt+O</code></td><td></td><td></td></tr><tr><td>代码提示 Code Assist</td><td><code>Alt+/</code></td><td><code>Ctrl+Space</code> <code>Ctrl+Shift+Space</code></td><td></td><td></td></tr><tr><td>代码补全 Code Completion</td><td><code>Ctrl+Alt+/</code><br />比较low</td><td><code>Ctrl+Shift+Enter</code></td><td></td><td></td></tr><tr><td>快速修复 Quick Fix</td><td><code>Ctrl+1</code></td><td><code>Alt+Enter</code></td><td></td><td></td></tr><tr><td>Quick Access</td><td><code>Ctrl+3</code></td><td><code>Double Shift</code></td><td></td><td></td></tr><tr><td>参数信息 Parameter Info</td><td><code>Alt+Shift+/</code><br />还不如 <code>Alt+/</code></td><td><code>Ctrl+P</code></td><td></td><td></td></tr><tr><td>查看API文档 Quick Document</td><td></td><td><code>Ctrl+Q</code></td><td></td><td></td></tr><tr><td>新建文件 New File</td><td><code>Alt+Shift+N</code> <code>Ctrl+N</code></td><td></td><td></td><td></td></tr><tr><td>激活编辑器 Active Editor</td><td><code>F12</code></td><td><code>Esc</code></td><td></td><td></td></tr><tr><td>全部小写</td><td><code>Ctrl+Shift+Y</code></td><td></td><td></td><td></td></tr><tr><td>全部大写</td><td><code>Ctrl+Shift+X</code></td><td></td><td></td><td></td></tr><tr><td><strong>导航 Navigation</strong></td><td></td><td></td><td></td><td></td></tr><tr><td>上/下一个Tab</td><td><code>Ctrl+PgUp/PgDn</code></td><td><code>Alt+Left/Right</code></td><td><code>Ctrl+PgUp/PgDn</code></td><td></td></tr><tr><td>上/下一个</td><td><code>Alt+Left/Right</code></td><td><code>Ctrl+Alt+Left/Right</code></td><td></td><td></td></tr><tr><td>上一处修改的地方</td><td><code>Ctrl+Q</code></td><td><code>Ctrl+Shift+Backspace</code></td><td></td><td></td></tr><tr><td>跳转到行 Go To Line</td><td><code>Ctrl+L</code></td><td><code>Ctrl+G</code></td><td></td><td></td></tr><tr><td>大纲/结构 Outline/Structure</td><td><code>Ctrl+O</code></td><td><code>Ctrl+F12</code></td><td></td><td></td></tr><tr><td>查看类层级 Type Hierarchy</td><td><code>Ctrl+T</code></td><td></td><td></td><td></td></tr><tr><td>查看最近文件 Recent File</td><td><code>Ctrl+E</code> <code>Ctrl+F6</code></td><td><code>Ctrl+E</code></td><td></td><td></td></tr><tr><td>跳到文件 Go To File</td><td><code>Ctrl+Shift+N</code></td><td></td><td></td><td></td></tr><tr><td>切换视图 Switch View</td><td><code>Ctrl+F7</code></td><td></td><td></td><td></td></tr><tr><td><strong>重构 Refator</strong></td><td></td><td></td><td></td><td></td></tr><tr><td>重命名 Rename</td><td><code>Alt+Shift+R</code></td><td><code>Shift+F6</code></td><td></td><td></td></tr><tr><td>提取变量 Extract Variable</td><td><code>Alt+Shift+L</code></td><td></td><td></td><td></td></tr><tr><td>提取方法 Extract Method</td><td><code>Alt+Shift+M</code></td><td></td><td></td><td></td></tr><tr><td><strong>搜索 Find</strong></td><td></td><td></td><td></td><td></td></tr><tr><td>查找下一个</td><td><code>Ctrl+K</code></td><td></td><td></td><td></td></tr><tr><td>查找上一个</td><td><code>Ctrl+Shfit+K</code></td><td></td><td></td><td></td></tr><tr><td>全局搜索</td><td><code>Ctrl+H</code></td><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;IDEA基础功能概览：&quot;&gt;&lt;a href=&quot;#IDEA基础功能概览：&quot; class=&quot;headerlink&quot; title=&quot;IDEA基础功能概览：&quot;&gt;&lt;/a&gt;IDEA基础功能概览：&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;shortcut(edit, 代码片段, 功能),</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/IDE&amp;Editor%20Shortcuts%20Query/"/>
+    <id>http://example.com/wiki/IDE&amp;Editor%20Shortcuts%20Query/</id>
+    <published>2020-11-06T08:35:32.758Z</published>
+    <updated>2020-07-23T09:51:04.093Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="各大-IDE-amp-Editor-快捷键对照表"><a href="#各大-IDE-amp-Editor-快捷键对照表" class="headerlink" title="各大 IDE &amp; Editor 快捷键对照表"></a>各大 IDE &amp; Editor 快捷键对照表</h1><table><thead><tr><th>操作</th><th>IntelliJ IDEA</th><th>Visual Studio Code</th><th>Visual Studio</th></tr></thead><tbody><tr><td><strong>编辑 Editing</strong></td><td></td><td></td><td></td></tr><tr><td>格式化代码 Format Code</td><td><code>Ctrl+Alt+L</code></td><td><code>Shift+Alt+F</code></td><td></td></tr><tr><td>删除行 Delete Line</td><td><code>Ctrl+Y</code></td><td><code>Ctrl+Shift+K</code></td><td></td></tr><tr><td>选中行 Select Line</td><td></td><td><code>Ctrl+L</code></td><td></td></tr><tr><td>复制行 Copy Line</td><td><code>Ctrl+C</code></td><td><code>Ctrl+C</code></td><td></td></tr><tr><td>剪切行 Cut Line</td><td><code>Ctrl+X</code></td><td><code>Ctrl+X</code></td><td></td></tr><tr><td>重复行 Duplicate Line</td><td><code>Ctrl+D</code></td><td><code>Alt+Shift+Up/Down</code></td><td></td></tr><tr><td>移动行 Move Line</td><td><code>Alt+Shift+Up/Down</code></td><td><code>Alt+Up/Down</code></td><td></td></tr><tr><td>换行 New Line</td><td><code>Shift+Enter</code></td><td><code>Shift+Enter</code></td><td></td></tr><tr><td>插入上行 Insert Line Above</td><td><code>Ctrl+Alt+Enter</code></td><td><code>Ctrl+Shift+Enter</code></td><td></td></tr><tr><td>注释 Comment</td><td><code>Ctrl+/</code></td><td><code>Ctrl+/</code></td><td></td></tr><tr><td>块注释 Block Comment</td><td><code>Ctrl+Shift+/</code></td><td><code>Ctrl+Shift+/</code></td><td></td></tr><tr><td>选择块 Block Selection</td><td><code>Ctrl+W</code> <code>Ctrl+Shift+W</code></td><td><code>Alt+Shift+Right/Left</code></td><td></td></tr><tr><td>选择相同内容</td><td><code>Alt+J</code></td><td><code>Ctrl+D</code></td><td></td></tr><tr><td>优化导包 Optimize Imports</td><td><code>Ctrl+Alt+O</code></td><td></td><td></td></tr><tr><td>代码提示 Code Assist</td><td><code>Ctrl+Space</code> <code>Ctrl+Shift+Space</code></td><td></td><td></td></tr><tr><td>代码补全 Code Completion</td><td><code>Ctrl+Shift+Enter</code></td><td></td><td></td></tr><tr><td>快速修复 Quick Fix</td><td><code>Alt+Enter</code></td><td></td><td></td></tr><tr><td>Quick Access</td><td><code>Double Shift</code></td><td></td><td></td></tr><tr><td>参数信息 Parameter Info</td><td><code>Ctrl+P</code></td><td></td><td></td></tr><tr><td>查看API文档 Quick Document</td><td><code>Ctrl+Q</code></td><td></td><td></td></tr><tr><td>新建文件 New File</td><td></td><td><code>Ctrl+N</code></td><td></td></tr><tr><td>激活编辑器 Active Editor</td><td><code>Esc</code></td><td></td><td></td></tr><tr><td>全部小写</td><td></td><td></td><td></td></tr><tr><td>全部大写</td><td></td><td></td><td></td></tr><tr><td><strong>导航 Navigation</strong></td><td></td><td></td><td></td></tr><tr><td>上/下一个Tab</td><td><code>Alt+Left/Right</code></td><td><code>Ctrl+PgUp/PgDn</code></td><td></td></tr><tr><td>上/下一个</td><td><code>Ctrl+Alt+Left/Right</code></td><td></td><td></td></tr><tr><td>上一处修改的地方</td><td><code>Ctrl+Shift+Backspace</code></td><td></td><td></td></tr><tr><td>跳转到行 Go To Line</td><td><code>Ctrl+G</code></td><td><code>Ctrl+G</code></td><td></td></tr><tr><td>大纲/结构 Outline/Structure</td><td><code>Ctrl+F12</code></td><td></td><td></td></tr><tr><td>查看类层级 Type Hierarchy</td><td></td><td></td><td></td></tr><tr><td>查看最近文件 Recent File</td><td><code>Ctrl+E</code></td><td></td><td></td></tr><tr><td>跳到文件 Go To File</td><td></td><td></td><td></td></tr><tr><td>切换视图 Switch View</td><td></td><td></td><td></td></tr><tr><td><strong>重构 Refator</strong></td><td></td><td></td><td></td></tr><tr><td>重命名 Rename</td><td><code>Shift+F6</code></td><td></td><td></td></tr><tr><td>提取变量 Extract Variable</td><td></td><td></td><td></td></tr><tr><td>提取方法 Extract Method</td><td></td><td></td><td></td></tr><tr><td><strong>搜索 Find</strong></td><td></td><td></td><td></td></tr><tr><td>查找 Find</td><td><code>Ctrl+F</code> <code>Ctrl+L</code></td><td><code>Ctrl+F</code></td><td></td></tr><tr><td>查找下一个</td><td></td><td></td><td></td></tr><tr><td>查找上一个</td><td></td><td></td><td></td></tr><tr><td>全局搜索</td><td></td><td></td><td></td></tr><tr><td><strong>智能 Intellictual</strong></td><td></td><td></td><td></td></tr><tr><td>重写 override</td><td><code>Ctrl+O</code></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;各大-IDE-amp-Editor-快捷键对照表&quot;&gt;&lt;a href=&quot;#各大-IDE-amp-Editor-快捷键对照表&quot; class=&quot;headerlink&quot; title=&quot;各大 IDE &amp;amp; Editor 快捷键对照表&quot;&gt;&lt;/a&gt;各大 IDE &amp;amp;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/GOGOGO/"/>
+    <id>http://example.com/wiki/GOGOGO/</id>
+    <published>2020-11-06T08:35:32.757Z</published>
+    <updated>2020-09-24T15:44:00.054Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSGO-大🌏之路"><a href="#CSGO-大🌏之路" class="headerlink" title="CSGO 大🌏之路"></a>CSGO 大🌏之路</h1><h2 id="拐角定理"><a href="#拐角定理" class="headerlink" title="拐角定理"></a>拐角定理</h2><p>离拐角（或障碍物）越近视野越受限，所以清点的时候要尽量站远点搜拐角。</p><p>同时也要避免长时间呆在距离拐角较近的地方蹲点/对枪/架枪。</p><p>蹲点的时候注意枪管长度不要暴露在外，必要的时候瞄墙藏枪管。</p><h2 id="移动炮台"><a href="#移动炮台" class="headerlink" title="移动炮台"></a>移动炮台</h2><p>架点遇敌人后<strong>不要当固定炮台</strong>，打完一个不要贪在原地架，对方知道了你的位置所以要及时移动免得被对面跟上来的peek掉（探头者优势）。移动的时候如果没发现有人跟着，可以考虑小身位看一下。</p><h2 id="换弹切换"><a href="#换弹切换" class="headerlink" title="换弹切换"></a>换弹切换</h2><p>换弹动作到了插入弹夹的时候可以切道具/切刀来争取时间（不需要拉栓了）。</p><p>但是换弹冷却时间总体是不会变的（切回来还需要时间），因此注意不要滥用（比如近距离对枪的时候换弹就没必要切来切去）。</p><h2 id="假拆艺术"><a href="#假拆艺术" class="headerlink" title="假拆艺术"></a>假拆艺术</h2><p>CT 2 v 1 （已下包）局面，两个人一起走，打掉人之前最好不要单人拆包。这个时候可以假拆一下再跟着队友一起搜点打人再回来安心拆包（除非时间不够）。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;CSGO-大🌏之路&quot;&gt;&lt;a href=&quot;#CSGO-大🌏之路&quot; class=&quot;headerlink&quot; title=&quot;CSGO 大🌏之路&quot;&gt;&lt;/a&gt;CSGO 大🌏之路&lt;/h1&gt;&lt;h2 id=&quot;拐角定理&quot;&gt;&lt;a href=&quot;#拐角定理&quot; class=&quot;head</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/wiki/DiscreteMathematicNote/"/>
+    <id>http://example.com/wiki/DiscreteMathematicNote/</id>
+    <published>2020-11-06T08:35:32.754Z</published>
+    <updated>2020-05-16T06:50:00.263Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Discrete-MatheMatic-Note-离散数学笔记"><a href="#Discrete-MatheMatic-Note-离散数学笔记" class="headerlink" title="Discrete MatheMatic Note 离散数学笔记"></a>Discrete MatheMatic Note 离散数学笔记</h1><p>Author: BAIDI<br>Date: from 2020-2-19</p><h2 id="1-Logic-and-Proofs-逻辑和证明"><a href="#1-Logic-and-Proofs-逻辑和证明" class="headerlink" title="1 Logic and Proofs 逻辑和证明"></a>1 Logic and Proofs 逻辑和证明</h2><h3 id="1-1-Propositional-Logic"><a href="#1-1-Propositional-Logic" class="headerlink" title="1.1 Propositional Logic"></a>1.1 Propositional Logic</h3><ul><li>connectives 逻辑联结词<br>negation<br>conjunction(合取) disjunction(析取) –inclusive/exclusive ..<br>conditional statement/biconditional statement</li></ul><h3 id="1-2-Applications-of-Propositional-Logic"><a href="#1-2-Applications-of-Propositional-Logic" class="headerlink" title="1.2 Applications of Propositional Logic"></a>1.2 Applications of Propositional Logic</h3><ol><li>System Specification 系统规范说明</li><li>Boolean Logic 布尔逻辑</li><li>Logic Puzzles 逻辑谜题</li><li>Logic Circuits 逻辑电路</li></ol><h3 id="1-3-Propositional-Equivalences"><a href="#1-3-Propositional-Equivalences" class="headerlink" title="1.3 Propositional Equivalences"></a>1.3 Propositional Equivalences</h3><ol><li>tautology, contradiction, contingency</li><li>logically equivalent ≡ ⇔</li><li>Law</li></ol><ul><li>De Morgan’s Law<br>¬(p ∧ q) ≡ ¬p ∨ ¬q<br>¬(p ∨ q) ≡ ¬p ∧ ¬q</li><li>other Law(check relative table)<br>¬p ∨ q and p → q</li><li>Distribute Law<br>p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)</li></ul><ol start="4"><li>Law’s extension</li><li>Law’s application</li><li>Proposition’s Satisfiability and Problem’s Solution</li><li>Soduka Puzzle’s solution</li></ol><h3 id="1-4-Predicates-and-Quantifiers-谓词和量词"><a href="#1-4-Predicates-and-Quantifiers-谓词和量词" class="headerlink" title="1.4 Predicates and Quantifiers 谓词和量词"></a>1.4 Predicates and Quantifiers 谓词和量词</h3><h4 id="Predicates-谓词"><a href="#Predicates-谓词" class="headerlink" title="Predicates 谓词"></a>Predicates 谓词</h4><blockquote><p>basic notion:Propositional function P (命题函数P)<br>n-place / n-ary predicates (n位/元谓词) 包含多个变量的谓词<br>P(x1, x2…xn) –谓词+变量=命题<br>Application–verify the correctness of a programme:<br>Precondition(input) &amp; Postcondition(output expected) (前置条件 &amp; 后置条件）</p></blockquote><h4 id="Quantifiers-量词"><a href="#Quantifiers-量词" class="headerlink" title="Quantifiers 量词"></a>Quantifiers 量词</h4><p>Notions:</p><ol><li>Quantification 量化</li><li>Universal quantifier 全称量词</li><li>domain: domain of discourse 论域(universe of discouse 全体域)</li><li>counterexample 反例</li><li>Existential quantifier 存在量词</li><li>Precedence 优先级</li><li>Resticted Domains 约束域 (约束域和条件，合取的等价关系)</li><li>bound (被赋值或被量词联结）-绑定 scope -作用域 free -自由(未绑定的变量)<h4 id="Logic-Equivalences-Involving-Quantifiers"><a href="#Logic-Equivalences-Involving-Quantifiers" class="headerlink" title="Logic Equivalences Involving Quantifiers"></a>Logic Equivalences Involving Quantifiers</h4>Notions:</li><li>comma 逗号</li><li>Prolog –programming in logic</li><li>Prolog fact / Prolog rule</li><li>semicolon 分号<h3 id="Nested-Quantifiers-嵌套变量"><a href="#Nested-Quantifiers-嵌套变量" class="headerlink" title="Nested Quantifiers 嵌套变量"></a>Nested Quantifiers 嵌套变量</h3><h3 id="Rules-of-inference-推理规则"><a href="#Rules-of-inference-推理规则" class="headerlink" title="Rules of inference 推理规则"></a>Rules of inference 推理规则</h3></li></ol><ul><li>argument 论证</li><li>valid 有效性</li><li>premise 前提</li><li>fallacy 谬误</li><li>argument form 推理形式</li><li>modus ponens 假言推理 （law of detachment 分离规则）</li><li>hypothesis 假设</li><li>syllogism 三段论</li><li>contrapositive 逆否命题</li><li>instantiation 实例</li><li>arbitrary 任意的<h3 id="Itroduction-to-Proofs"><a href="#Itroduction-to-Proofs" class="headerlink" title="Itroduction to Proofs"></a>Itroduction to Proofs</h3></li><li>theorem 定理 axiom 公理 lemmma 引理</li><li>corollary 推论 conjecture 猜想</li><li>vacuous proof 空证明</li><li>trivial proof 平凡证明</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Discrete-MatheMatic-Note-离散数学笔记&quot;&gt;&lt;a href=&quot;#Discrete-MatheMatic-Note-离散数学笔记&quot; class=&quot;headerlink&quot; title=&quot;Discrete MatheMatic Note 离散数学笔</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>William@Wiki</title>
+    
+    
+        <meta name="keywords" content="William@Wiki" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Kotlin 学习笔记 Kotlin 可以编译成Java字节码，也可以编译成 JavaScript，方便在没有 JVM 的设备上运行。 kotlin源文件不需要相匹配的目录和包，源文件可以放在任何文件目录。 $a 和 ${a.func()}我是真没话说。 完善的NULL检查机制 “!!, ?, ?:”（当一个引用可能为 null 值时, 对应的类型声明必须明确地标记为可为 null。方法是： “T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="William@Wiki">
+<meta property="og:url" content="http://example.com/wiki/Kotlin/index.html">
+<meta property="og:site_name" content="William@Wiki">
+<meta property="og:description" content="Kotlin 学习笔记 Kotlin 可以编译成Java字节码，也可以编译成 JavaScript，方便在没有 JVM 的设备上运行。 kotlin源文件不需要相匹配的目录和包，源文件可以放在任何文件目录。 $a 和 ${a.func()}我是真没话说。 完善的NULL检查机制 “!!, ?, ?:”（当一个引用可能为 null 值时, 对应的类型声明必须明确地标记为可为 null。方法是： “T">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-06T08:35:32.767Z">
+<meta property="article:modified_time" content="2020-07-22T02:27:01.994Z">
+<meta property="article:author" content="WeiliangBai">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="William@Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">William@Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.784Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.782Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.781Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.779Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.778Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-Kotlin" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="Kotlin-学习笔记"><a href="#Kotlin-学习笔记" class="headerlink" title="Kotlin 学习笔记"></a>Kotlin 学习笔记</h1><ul>
+<li>Kotlin 可以编译成Java字节码，也可以编译成 JavaScript，方便在没有 JVM 的设备上运行。</li>
+<li>kotlin源文件不需要相匹配的目录和包，源文件可以放在任何文件目录。</li>
+<li>$a 和 ${a.func()}我是真没话说。</li>
+<li>完善的NULL检查机制 “!!, ?, ?:”（当一个引用可能为 null 值时, 对应的类型声明必须明确地标记为可为 null。方法是： “Type后 + ？”）</li>
+<li>玩转for循环：可以方便的指定遍历的步长，范围。（ .., step, downTo, in, until)</li>
+<li>Kotlin 的基本数值类型包括 Byte、Short、Int、Long、Float、Double 等。<strong>不同于 Java 的是，字符==不属于==数值类型</strong>，是一个独立的数据类型。</li>
+<li>支持二进制字面量，数值类型混入下划线增加语义性。</li>
+<li>有些时候较小类型不会隐式转换成较大类型，需要手动调用 .toXXX() 来进行显示的类型转换。</li>
+<li>和 <em>golang</em> 一样少了分号（这就是语法糖吗i了i了</li>
+<li>if-else 语句与when语句等可以视为 ==表达式==（可赋值</li>
+<li>when 与 -&gt; 符号构成强大的分支控制。</li>
+<li>完全抛弃<em>基本数据类型</em>改用<em>对象数据类型</em>“。</li>
+<li>“fun xxx() = xxx” 这个语法糖结合 if else, when 等特性可以打出漂亮的组合拳。</li>
+<li>class 继承的时候对继承的父类后面<em>一般</em>要加括号（因为 java 继承中必调用父类构造函数）且此构造函数必调用主构造函数。</li>
+<li>Java 与 Kotlin 访问修饰符对照表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>Java</th>
+<th>Kotlin</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pubilc</td>
+<td>所有类可见</td>
+<td>所有类可见（默认修饰符）</td>
+</tr>
+<tr>
+<td>private</td>
+<td>当前类可见</td>
+<td>当前类可见</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>当前类，子类，同意包路径下的类可见</td>
+<td>当前类，子类可见</td>
+</tr>
+<tr>
+<td>default</td>
+<td>同一包目录下的类可见（默认修饰符）</td>
+<td>无</td>
+</tr>
+<tr>
+<td>internal</td>
+<td>无</td>
+<td>同一模块下的类可见</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>语法糖: 原生支持数据类、单例类 （自动完成 toString(), hashCode(), equals() 等方法）</p>
+<ul>
+<li><p>Java 数据类代码示例</p>
+</li>
+<li><pre><code class="java">public class Cellphone &#123;
+    String brand;
+    double price;
+
+    public Cellphone(String brand, double price) &#123;
+        this.brand = brand;
+        this.price = price;
+    &#125;
+
+    @Override
+    public boolean equals(Object obj) &#123;
+        if (obj instanceof Cellphone) &#123;
+            Cellphone other = (Cellphone) obj;
+            return other.brand.equals(brand) &amp;&amp; other.price == price;
+        &#125;
+        return false;
+    &#125;
+
+    @Override
+    public int hashCode() &#123;
+        return brand.hashCode() + (int) price;
+    &#125;
+
+    @Override
+    public String toString() &#123;
+        return &quot;Cellphone(brand=&quot; + brand + &quot;, price=&quot; + price + &quot;)&quot;;
+    &#125;
+&#125;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Kotlin 数据类代码示例</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96; kotlin</span><br><span class="line">  data class Cellphone(val brand: String, val price: Double)	&#x2F;&#x2F;加一个data即可</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+<li><p>Java 单例类代码示例</p>
+</li>
+<li><pre><code class="java">public class Singleton &#123;
+    private static Singleton instance;
+
+    private Singleton() &#123;&#125;
+
+    public synchronized static Singleton getInstance() &#123;
+        if (instance == null) &#123;
+            instance = new Singleton();
+        &#125;
+        return instance;
+    &#125;
+
+    public void singletonTest() &#123;
+        System.out.println(&quot;singletonTest is called.&quot;);
+    &#125;
+&#125;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- Kotlin 单例类代码示例</span><br><span class="line"></span><br><span class="line">- &#96;&#96;&#96;kotlin</span><br><span class="line">  object Singleton &#123;	&#x2F;&#x2F;只需要用object代替class即可</span><br><span class="line">      fun singletonTest() &#123;</span><br><span class="line">          println(&quot;singletonTest is called.&quot;)</span><br><span class="line">      &#125;	&#x2F;&#x2F;这里相当于一个静态方法</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+</ul>
+</li>
+<li><p>Kotlin class 类</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th>实例的Class对象</th>
+<th>类的Class对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Kotlin</td>
+<td>javaclass</td>
+<td>类名::class.java</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>(this).getclass()</td>
+<td>类名.class</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>Kotlin 标准函数</p>
+<ul>
+<li><p>一系列定义于 Standard.kt 里的函数</p>
+</li>
+<li><p>参照表</p>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>特点</th>
+<th>代码段</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>let()</code></td>
+<td>调用let的对象作为Lamda的<strong>参数</strong>，返回最后一行</td>
+<td><code>obj.let &#123;(obj2 -&gt;) //obj2是obj&#125;</code></td>
+</tr>
+<tr>
+<td><code>with()</code></td>
+<td>传入对象作为Lambda的上下文，返回最后一行</td>
+<td><code>with(obj) &#123;//obj上下文&#125;</code></td>
+</tr>
+<tr>
+<td><code>run()</code></td>
+<td>调用run的对象作为Lamda的上下文，返回最后一行</td>
+<td><code>obj.run &#123;//obj上下文&#125;</code></td>
+</tr>
+<tr>
+<td><code>apply()</code></td>
+<td>调用apply的对象作为Lamda的上下文，<strong>返回原对象</strong></td>
+<td><code>obj.apply &#123;//obj上下文&#125;</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>Kotlin “静态方法调用”<ul>
+<li>单例类 <code>objetc &#123;&#125;</code></li>
+<li>伴生类 <code>companion object &#123;&#125;</code></li>
+<li>顶层方法 <code>fun xxx()</code>，可以被任意Kotlin代码直接调用，<em>文件名作为类还可以用于java静态方法调用</em></li>
+<li><code>@JvmStatic</code> 注释，<em>只能加注在单例类方法或伴生类方法上，使其编译成java静态方法</em></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/LatexTikz/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    (no title)
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/Kotlin%20%E8%BF%9B%E9%98%B6%E8%AF%BE%E5%A0%82/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title"></div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            WeiliangBai &copy; 2020 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

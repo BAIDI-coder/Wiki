@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>William@Wiki</title>
+    
+    
+        <meta name="keywords" content="William@Wiki" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="《第一行代码：Android》读书笔记 (三) 为方便笔记，约定使用伪Kotlin语法： &lt;!ClassName&gt; 用来表示ClassName类的一个实例 &lt;Abstract&gt;或&lt;A&gt; 写在方法(类)前用来表示该方法（类）是一个必须要给出实现的抽象方法&#x2F;类 &lt;Static&gt;或&lt;S&gt;写在方法(类)前用来表示该方法（类）是一个静态的方法&#x2F;类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="William@Wiki">
+<meta property="og:url" content="http://example.com/wiki/%E3%80%8A%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%9AAndroid%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
+<meta property="og:site_name" content="William@Wiki">
+<meta property="og:description" content="《第一行代码：Android》读书笔记 (三) 为方便笔记，约定使用伪Kotlin语法： &lt;!ClassName&gt; 用来表示ClassName类的一个实例 &lt;Abstract&gt;或&lt;A&gt; 写在方法(类)前用来表示该方法（类）是一个必须要给出实现的抽象方法&#x2F;类 &lt;Static&gt;或&lt;S&gt;写在方法(类)前用来表示该方法（类）是一个静态的方法&#x2F;类">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200916163550.png">
+<meta property="og:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200916174433.png">
+<meta property="article:published_time" content="2020-11-06T08:35:32.746Z">
+<meta property="article:modified_time" content="2020-10-20T11:14:37.543Z">
+<meta property="article:author" content="WeiliangBai">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200916163550.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="William@Wiki" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">William@Wiki</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>recent</span></h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E5%B0%8F%E6%8A%80%E5%B7%A7%E6%89%8B%E5%86%8C/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.784Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.782Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E9%9D%A2%E5%90%91%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%A0%94%E7%A9%B6/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.781Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E6%9D%8E%E5%AE%8F%E6%AF%85%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.779Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/wiki/%E6%B3%95%E5%AD%A6%E4%B8%B4%E6%97%B6/" class="title"></a></p>
+                            <p class="item-date"><time datetime="2020-11-06T08:35:32.778Z" itemprop="datePublished">2020-11-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-《第一行代码：Android》读书笔记（三）" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h1 id="《第一行代码：Android》读书笔记-三"><a href="#《第一行代码：Android》读书笔记-三" class="headerlink" title="《第一行代码：Android》读书笔记 (三)"></a>《第一行代码：Android》读书笔记 (三)</h1><blockquote>
+<p>为方便笔记，约定使用<strong>伪Kotlin语法</strong>：</p>
+<p><code>&lt;!ClassName&gt;</code> 用来表示ClassName类的一个实例</p>
+<p><code>&lt;Abstract&gt;或&lt;A&gt;</code> 写在方法(类)前用来表示该方法（类）是一个必须要给出实现的抽象方法/类</p>
+<p><code>&lt;Static&gt;或&lt;S&gt;</code>写在方法(类)前用来表示该方法（类）是一个静态的方法/类</p>
+<p><code>&lt;+&gt;</code> 表示public方法</p>
+<p><code>O</code> 是<code>override</code>的缩略</p>
+<p><code>XXX</code> 表示待定的语法字符串</p>
+<p><code>...</code> 表示前后代码段省略</p>
+</blockquote>
+<h2 id="丰富多彩的多媒体"><a href="#丰富多彩的多媒体" class="headerlink" title="丰富多彩的多媒体"></a>丰富多彩的多媒体</h2><h3 id="使用通知"><a href="#使用通知" class="headerlink" title="使用通知"></a>使用通知</h3><h4 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">     class NotificationManager &#123;</span><br><span class="line">     +notify()</span><br><span class="line">     +createNotificationChannel()</span><br><span class="line">     &#125;</span><br><span class="line">     class NotificationChannel</span><br><span class="line">     class NotificationCompat &#123;</span><br><span class="line">     +Builder()</span><br><span class="line">     &#125;</span><br><span class="line">     NotificationCompat --&gt; Notification: 创建</span><br><span class="line">     </span><br><span class="line">     NotificationManager --&gt; NotificationChannel: 创建、管理</span><br><span class="line">     NotificationManager --&gt; Notification: 发送</span><br><span class="line">     Notification --* NotificationChannel: 对应</span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+
+<h4 id="NotificationManager-类"><a href="#NotificationManager-类" class="headerlink" title="NotificationManager 类"></a>NotificationManager 类</h4><ul>
+<li>创建：<code>val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotifictionManager</code><ul>
+<li>备注：<code>getSystemService()</code> 是 <code>Context</code> 的一个用来获取系统服务方法。</li>
+</ul>
+</li>
+</ul>
+<h4 id="NotificationChannel-类"><a href="#NotificationChannel-类" class="headerlink" title="NotificationChannel 类"></a>NotificationChannel 类</h4><blockquote>
+<p>每条通知都要属于一个对应的渠道。每个应用程序都可以自由地创建当前应用拥有哪些通知渠道，但是这些通知渠道的控制权是掌握在用户手上的。用户可以自由地选择这些通知渠道的重要程度，是否响铃、是否振动或者是否要关闭这个渠道的通知。</p>
+</blockquote>
+<figure class="highlight kotlin"><figcaption><span>创建通知渠道</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;	</span><br><span class="line"><span class="comment">// 通知渠道是v8.0新增的API，需要做下版本判别才能使用NotificationChannel</span></span><br><span class="line">    <span class="keyword">val</span> channel = NotificationChannel(channelId: String, channelName: String, importance)</span><br><span class="line">    <span class="comment">//构造通知渠道实例                    渠道标识串          向用户显示的渠道名称    重要等级</span></span><br><span class="line">    </span><br><span class="line">    &lt;!NotificationManager&gt;.createNotificationChannel(channel)</span><br><span class="line">    <span class="comment">//创建通知渠道                                        </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通知渠道重要等级：<code>IMPORTANCE_HIGH</code>、<code>IMPORTANCE_DEFAULT</code>、<code>IMPORTANCE_LOW</code>、<code>IMPORTANCE_MIN</code>，用不同level构造的channel会有不同的表现，如HIGH级别的渠道会弹出通知。</li>
+</ul>
+<h4 id="Notification-类"><a href="#Notification-类" class="headerlink" title="Notification 类"></a>Notification 类</h4><ul>
+<li>可以在 Activity（较少）、Broadcast、Service 中创建</li>
+</ul>
+<figure class="highlight kotlin"><figcaption><span>通知の构建与发送</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用AndroidX库的NotificationCompat类来构建通知要比原API兼容性更好</span></span><br><span class="line"><span class="keyword">val</span> notification = NotificationCompat.Builder(context, channelId: String)<span class="comment">//通知要对应唯一一个channel</span></span><br><span class="line">        .setContentTitle(title: String)</span><br><span class="line">        .setContentText(text: String)</span><br><span class="line">		.setContentIntent(pi: PendingIntent)<span class="comment">//点击事件</span></span><br><span class="line">        .setSmallIcon(R.drawable.small_icon)</span><br><span class="line">        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.large_icon))</span><br><span class="line">		.setAutoCancel(<span class="literal">true</span>)<span class="comment">//点击通知后通知消失</span></span><br><span class="line">        <span class="comment">//可以连缀多个set方法来赋予通知各种属性</span></span><br><span class="line">        .build()<span class="comment">//构建</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//通过管理器发送</span></span><br><span class="line">&lt;!NotificationManager&gt;.notify(id: <span class="built_in">Int</span>, notification: Notification)</span><br><span class="line"><span class="comment">//							  通知的标识符    通知</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通知属性(进阶)：<code>.setStyle()</code> 方法——让通知呈现富文本</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">	Style --&gt; BigPictureStyle;</span><br><span class="line">	Style --&gt; BigTextStyle</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><figcaption><span>setStyle 举例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//大图片</span></span><br><span class="line">.setStyle(NotificationCompat.BigPictureStyle().bigPicture(</span><br><span class="line">		BitmapFactory.decodeResource(resources, R.drawable.big_image)))</span><br><span class="line"><span class="comment">//长文字</span></span><br><span class="line">.setStyle( NotificationCompat.BigTextStyle().bigText(string: String) )</span><br></pre></td></tr></table></figure>
+
+<p>####　点击事件</p>
+<ul>
+<li>为通知设置点击事件：<code>.setContentIntent(pi: PendingIntent)</code></li>
+</ul>
+<figure class="highlight kotlin"><figcaption><span>构建PendingIntent</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;S&gt; PendingIntent.getXXX(ctx: Context, <span class="number">0</span>, intent: Intent, flag: <span class="built_in">Int</span>): PendingIntent</span><br><span class="line"><span class="comment">//para4用于确定PendingIntent的行为，一般可取0详，情查文档</span></span><br><span class="line"><span class="comment">//XXX可以是Activity、Broadcast、Service</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="调用摄像头与相册"><a href="#调用摄像头与相册" class="headerlink" title="调用摄像头与相册"></a>调用摄像头与相册</h3><h4 id="From-Camera"><a href="#From-Camera" class="headerlink" title="From Camera"></a>From Camera</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">flowchart TB</span><br><span class="line">	获取对应的Uri对象 --&gt; 给intent传入Uri指定相片将写入的文件</span><br><span class="line">	intent机制呼出相机拍照 --&gt; 将拍摄的照片显示出来</span><br><span class="line">	subgraph 1</span><br><span class="line">	创建对应路径的File对象 --&gt; 获取对应的Uri对象</span><br><span class="line">	end</span><br><span class="line">	subgraph 2</span><br><span class="line">	给intent传入Uri指定相片将写入的文件 --&gt; intent机制呼出相机拍照</span><br><span class="line">	end</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><figcaption><span>相机实例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="keyword">lateinit</span> <span class="keyword">var</span> imageUri: Uri</span><br><span class="line">    <span class="keyword">lateinit</span> <span class="keyword">var</span> outputImage: File</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//step1</span></span><br><span class="line">        outputImage = File(externalCacheDir, <span class="string">&quot;output_image.jpg&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> (outputImage.exists()) &#123;</span><br><span class="line">            outputImage.delete()</span><br><span class="line">        &#125;</span><br><span class="line">        outputImage.createNewFile()</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//step2</span></span><br><span class="line">        imageUri = <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.N) &#123;</span><br><span class="line">            FileProvider.getUriForFile(<span class="keyword">this</span>, <span class="string">&quot;com.example.cameraalbumtest.fileprovider&quot;</span>, outputImage)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            Uri.fromFile(outputImage)</span><br><span class="line">        &#125;<span class="comment">//从Android 7.0系统开始，直接使用本地真实路径的Uri被认为是不安全的，会抛出一个FileUriExposedException异常。</span></span><br><span class="line">        <span class="comment">//而FileProvider则是一种特殊的ContentProvider，它可以选择性地将封装过的Uri共享给外部，从而提高了应用的安全性。</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//step3~4</span></span><br><span class="line">        <span class="keyword">val</span> intent = Intent(<span class="string">&quot;android.media.action.IMAGE_CAPTURE&quot;</span>)</span><br><span class="line">        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)</span><br><span class="line">        startActivityForResult(intent, takePhoto)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//step5</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onActivityResult</span><span class="params">(requestCode: <span class="type">Int</span>, resultCode: <span class="type">Int</span>, <span class="keyword">data</span>: <span class="type">Intent</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onActivityResult(requestCode, resultCode, <span class="keyword">data</span>)</span><br><span class="line">        <span class="keyword">when</span> (requestCode) &#123;</span><br><span class="line">            takePhoto -&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (resultCode == Activity.RESULT_OK) &#123;<span class="keyword">val</span> bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(imageUri))</span><br><span class="line">                    imageView.setImageBitmap( bitmap)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>代码中用到<code>&quot;com.example.cameraalbumtest.fileprovider&quot;</code>，需要在Manifest中注册。</li>
+</ul>
+<figure class="highlight xml"><figcaption><span>fileprovider注册示例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">provider</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">&quot;androidx.core.content.FileProvider&quot;</span>	//固定不变</span></span><br><span class="line"><span class="tag">    <span class="attr">android:authorities</span>=<span class="string">&quot;com.example.cameraalbumtest.fileprovider&quot;</span>	//与<span class="attr">FileProvider.getUriForFile</span>()第二个参数一致</span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">&quot;false&quot;</span>	//是否允许外部使用</span></span><br><span class="line"><span class="tag">    <span class="attr">android:grantUriPermissions</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta-data</span>	//指定<span class="attr">Uri</span>共享路径</span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">&quot;android.support.FILE_PROVIDER_PATHS&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:resource</span>=<span class="string">&quot;@xml/file_paths&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">provider</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><figcaption><span>res/xml/file_paths.xml文件示例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">paths</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">external-path</span> <span class="attr">name</span>=<span class="string">&quot;my_images&quot;</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> /&gt;</span></span><br><span class="line">    //                   随意       指定共享目录</span><br><span class="line"><span class="tag">&lt;/<span class="name">paths</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="From-Album"><a href="#From-Album" class="headerlink" title="From Album"></a>From Album</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	发送请求Intent--&gt;接受并处理结果Result</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><figcaption><span>相簿示例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="comment">//*step1</span></span><br><span class="line">        <span class="keyword">val</span> intent = Intent(Intent.ACTION_OPEN_DOCUMENT)</span><br><span class="line">        intent.addCategory(Intent.CATEGORY_OPENABLE) </span><br><span class="line">        intent.type = <span class="string">&quot;image/*&quot;</span></span><br><span class="line">        </span><br><span class="line">        startActivityForResult(intent, fromAlbum)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//step2</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onActivityResult</span><span class="params">(requestCode: <span class="type">Int</span>, resultCode: <span class="type">Int</span>, <span class="keyword">data</span>: <span class="type">Intent</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onActivityResult(requestCode, resultCode, <span class="keyword">data</span>)</span><br><span class="line">        <span class="keyword">when</span> (requestCode) &#123;</span><br><span class="line">            fromAlbum -&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (resultCode == Activity.RESULT_OK &amp;&amp; <span class="keyword">data</span> != <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">data</span>.<span class="keyword">data</span>?.let &#123; uri -&gt;</span><br><span class="line">                        <span class="keyword">val</span> bitmap = getBitmapFromUri(uri)</span><br><span class="line">                        imageView.setImageBitmap(bitmap)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="播放多媒体文件"><a href="#播放多媒体文件" class="headerlink" title="播放多媒体文件"></a>播放多媒体文件</h3><h4 id="音频概览"><a href="#音频概览" class="headerlink" title="音频概览"></a>音频概览</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">class Activity &#123;</span><br><span class="line">	getAssets();</span><br><span class="line">&#125;</span><br><span class="line">class AssetManager &#123;</span><br><span class="line">	+openFd();</span><br><span class="line">&#125;</span><br><span class="line">class MediaPlayer &#123;</span><br><span class="line">	+setDataSource();</span><br><span class="line">	+prepare();</span><br><span class="line">&#125;</span><br><span class="line">Activity--&gt;AssetManager: 创建</span><br><span class="line">AssetManager--&gt;MediaPlayer: 提供播放资源</span><br></pre></td></tr></table></figure>
+
+<h4 id="MediaPlayer-类"><a href="#MediaPlayer-类" class="headerlink" title="MediaPlayer 类"></a>MediaPlayer 类</h4><blockquote>
+<p>MediaPlayer 可以用于播放<strong>网络、本地、app安装包中的音频</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>方法名</strong></th>
+<th><strong>功能描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>setDataSource()</td>
+<td>设置要播放的音频文件的位置</td>
+</tr>
+<tr>
+<td>prepare()</td>
+<td>在开始播放之前调用，以完成准备工作</td>
+</tr>
+<tr>
+<td>start()</td>
+<td>开始或继续播放音频</td>
+</tr>
+<tr>
+<td>pause()</td>
+<td>暂停播放音频</td>
+</tr>
+<tr>
+<td>reset()</td>
+<td>将MediaPlayer对象重置到刚刚创建的状态</td>
+</tr>
+<tr>
+<td>seekTo()</td>
+<td>从指定的位置开始播放音频</td>
+</tr>
+<tr>
+<td>stop()</td>
+<td>停止播放音频。调用后的MediaPlayer对象无法再播放音频</td>
+</tr>
+<tr>
+<td>release()</td>
+<td>释放与MediaPlayer对象相关的资源</td>
+</tr>
+<tr>
+<td>isPlaying()</td>
+<td>判断当前MediaPlayer是否正在播放音频</td>
+</tr>
+<tr>
+<td>getDuration()</td>
+<td>获取载入的音频文件的时长</td>
+</tr>
+</tbody></table>
+<h4 id="AssetManager-类"><a href="#AssetManager-类" class="headerlink" title="AssetManager 类"></a>AssetManager 类</h4><blockquote>
+<p><code>app/src/main/assets</code> 内的文件和子目录在项目打包时会一并打包到安装文件中。</p>
+<p><code>AssetManager</code> 就是用来管理<code>asset</code>内文件的工具类</p>
+</blockquote>
+<h4 id="音频示例"><a href="#音频示例" class="headerlink" title="音频示例"></a>音频示例</h4><figure class="highlight kotlin"><figcaption><span>播放安装包内音频</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> mediaPlayer = MediaPlayer()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main)</span><br><span class="line">        initMediaPlayer()</span><br><span class="line">        play.setOnClickListener &#123;</span><br><span class="line">            <span class="keyword">if</span> (!mediaPlayer.isPlaying) &#123;</span><br><span class="line">                mediaPlayer.start() <span class="comment">// 开始播放</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        pause.setOnClickListener &#123;</span><br><span class="line">            <span class="keyword">if</span> (mediaPlayer.isPlaying) &#123;</span><br><span class="line">                mediaPlayer.pause() <span class="comment">// 暂停播放</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stop.setOnClickListener &#123;</span><br><span class="line">            <span class="keyword">if</span> (mediaPlayer.isPlaying) &#123;</span><br><span class="line">                mediaPlayer.reset() <span class="comment">// 停止播放</span></span><br><span class="line">                initMediaPlayer()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">initMediaPlayer</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">val</span> assetManager = assets</span><br><span class="line">        <span class="keyword">val</span> fd = assetManager.openFd(<span class="string">&quot;music.mp3&quot;</span>)</span><br><span class="line">        mediaPlayer.setDataSource(fd.fileDescriptor, fd.startOffset, fd.length) </span><br><span class="line">        mediaPlayer.prepare()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDestroy</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy()</span><br><span class="line">        mediaPlayer.stop()</span><br><span class="line">        mediaPlayer.release()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="视频概论"><a href="#视频概论" class="headerlink" title="视频概论"></a>视频概论</h4><p>VideoView 类实际上是在MediaPlayer上的一层封装。</p>
+<p>注意VideoView不支持播放asset文件，但可以播放<code>app/src/main/res/raw</code>下的文件（想到VideoView是一种View就不难理解）。</p>
+<p>注意VideoView不适合做功能强大的视频播放器。</p>
+<h4 id="视频实例"><a href="#视频实例" class="headerlink" title="视频实例"></a>视频实例</h4><figure class="highlight xml"><figcaption><span>VideoView控件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">VideoView</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:id</span>=<span class="string">&quot;@id+videoView&quot;</span></span></span><br><span class="line"><span class="tag">           <span class="attr">...layout_width</span>=<span class="string">...</span></span></span><br><span class="line"><span class="tag">           <span class="attr">...layout_height</span>=<span class="string">...</span></span></span><br><span class="line"><span class="tag">           <span class="attr">...</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><figcaption><span>VideoView类</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*class MainActivity : AppCompatActivity() &#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    override fun onCreate(savedInstanceState: Bundle?) &#123;</span></span><br><span class="line"><span class="comment">        super.onCreate(savedInstanceState)</span></span><br><span class="line"><span class="comment">        setContentView(R.layout.activity_main)*/</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">val</span> uri = Uri.parse(<span class="string">&quot;android.resource://<span class="variable">$packageName</span>/<span class="subst">$&#123;R.raw.video&#125;</span>&quot;</span>)</span><br><span class="line">		<span class="comment">//留意资源URI字符串格式</span></span><br><span class="line">        videoView.setVideoURI(uri)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        play.setOnClickListener &#123;</span></span><br><span class="line"><span class="comment">            if (!videoView.isPlaying) &#123;</span></span><br><span class="line"><span class="comment">                videoView.start() // 开始播放</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        pause.setOnClickListener &#123;</span></span><br><span class="line"><span class="comment">            if (videoView.isPlaying) &#123;</span></span><br><span class="line"><span class="comment">                videoView.pause() // 暂停播放</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        replay.setOnClickListener &#123;</span></span><br><span class="line"><span class="comment">            if (videoView.isPlaying) &#123;</span></span><br><span class="line"><span class="comment">                videoView.resume() // 重新播放</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    &#125;*/</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onDestroy</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy()</span><br><span class="line">        videoView.<span class="keyword">suspend</span>()<span class="comment">//释放VideoView占用的资源</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="后台默默劳动者-Service"><a href="#后台默默劳动者-Service" class="headerlink" title="后台默默劳动者 Service"></a>后台默默劳动者 Service</h2><h3 id="安卓多线程"><a href="#安卓多线程" class="headerlink" title="安卓多线程"></a>安卓多线程</h3><h4 id="Kotlin-多线程编程"><a href="#Kotlin-多线程编程" class="headerlink" title="Kotlin 多线程编程"></a>Kotlin 多线程编程</h4><figure class="highlight kotlin"><figcaption><span>kotlin创建线程的三种方式</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 继承重写Thread()</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span>: <span class="type">Thread</span></span>() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">run</span><span class="params">()</span></span> &#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line">MyThread.start()</span><br><span class="line"></span><br><span class="line"><span class="comment">//2-1. 用接口构造Thread()</span></span><br><span class="line">Thread(<span class="keyword">object</span>: Runnable &#123;	<span class="comment">//注意这里是匿名内部类的写法</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">run</span><span class="params">()</span></span> &#123;...&#125;</span><br><span class="line">&#125;).start()</span><br><span class="line"></span><br><span class="line"><span class="comment">//2-2. kotlin单抽象方法接口の简化版</span></span><br><span class="line">Thread&#123;<span class="comment">/*Lambda*/</span>&#125;.start()</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 用kotlin内置顶层函数</span></span><br><span class="line">thread &#123;</span><br><span class="line">    <span class="comment">//logic</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="异步消息处理机制"><a href="#异步消息处理机制" class="headerlink" title="异步消息处理机制"></a>异步消息处理机制</h4><blockquote>
+<p>Android 只能在主线程中改UI，因此在子线程中想要进行UI操作就需要异步机制</p>
+</blockquote>
+<img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200916163550.png" alt="图10-1 Android 异步消息处理机制" style="zoom:90%;" />
+
+<ul>
+<li>Message是在线程之间传递的消息，它可以在内部携带少量的信息，用于在不同线程之间传递数据。</li>
+<li>Handler主要用于发送和处理消息，发送消息一般是使用Handler的sendMessage()方法、post()方法等，而发出的消息经过一系列地辗转处理后，最终会传递到Handler的handleMessage()方法中。</li>
+<li>MessageQueue是消息队列的意思，它主要用于存放所有通过Handler发送的消息。这部分消息会一直存在于消息队列中，等待被处理。每个线程中只会有一个MessageQueue对象。</li>
+<li>Looper是每个线程中的MessageQueue的管家，调用Looper的loop()方法后，就会进入一个无限循环当中，然后每当发现MessageQueue中存在一条消息时，就会将它取出，并传递到Handler的handleMessage()方法中。每个线程中只会有一个Looper对象。</li>
+</ul>
+<figure class="highlight kotlin"><figcaption><span>异步消息处理机制实例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">val</span> updateText = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//在主线程中创建一个Handler对象，当接收到Message时该对象的.handleMessage()就能在主线程中被调用</span></span><br><span class="line">    <span class="keyword">val</span> handler = <span class="keyword">object</span> : Handler() &#123;</span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">handleMessage</span><span class="params">(msg: <span class="type">Message</span>)</span></span> &#123;</span><br><span class="line">            <span class="comment">// 在这里可以进行UI操作</span></span><br><span class="line">            <span class="keyword">when</span> (msg.what) &#123;</span><br><span class="line">                updateText -&gt; textView.text = <span class="string">&quot;Nice to meet you&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_main)</span><br><span class="line">        changeTextBtn.setOnClickListener &#123;</span><br><span class="line">            thread &#123;</span><br><span class="line">                <span class="keyword">val</span> msg = Message()</span><br><span class="line">                msg.what = updateText</span><br><span class="line">                handler.sendMessage(msg) <span class="comment">// 在子线程将Message对象发送出去</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//一趟下来Message从子线程辗转到了主线程</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">class Message &#123;</span><br><span class="line">	Int what</span><br><span class="line">	Int arg1</span><br><span class="line">	Int arg2</span><br><span class="line">	Object obj</span><br><span class="line">	&#x2F;&#x2F;以上字段用于携带信息</span><br><span class="line">&#125;</span><br><span class="line">class Handler &#123;</span><br><span class="line">	+sendMessage(Message m)</span><br><span class="line">	+post()</span><br><span class="line">	+handleMessage(Message m)*</span><br><span class="line">&#125;</span><br><span class="line">Handler --&gt; Message: 发送</span><br><span class="line">Message --&gt; Handler: 处理</span><br></pre></td></tr></table></figure>
+
+<h4 id="AsyncTask-类"><a href="#AsyncTask-类" class="headerlink" title="AsyncTask 类"></a>AsyncTask 类</h4><ul>
+<li>重写四个方法，<code>.execute()</code>启动</li>
+</ul>
+<figure class="highlight kotlin"><figcaption><span>解析AsyncTask类</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;A&gt; AsyncTask&lt;paramsType, progressType, resultType&gt; &#123;</span><br><span class="line"><span class="comment">//注意三个泛型：参数类型      进度类型        结果类型</span></span><br><span class="line">    &lt;A&gt; onPreExecute()	<span class="comment">//后台开启前的初始化任务</span></span><br><span class="line">    &lt;A&gt; doInBackground(paramsType...)	<span class="comment">//后台任务：在子线程中运行</span></span><br><span class="line">    &lt;A&gt; onProgressUpdate(progressType...)	<span class="comment">//后台publishProgress(progressType...)后执行（通常在这改UI）</span></span><br><span class="line">    &lt;A&gt; onPostExecute(resultType)	<span class="comment">//后台return后执行</span></span><br><span class="line">    &lt;+&gt; execute()	<span class="comment">//启动任务</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="https://gitee.com/BAIDI-CODER/PicGo/raw/master/img/20200916174433.png" alt="图10-2 AsyncTask抽象方法の关系" style="zoom:80%;" />
+
+
+
+<h3 id="Service-基础"><a href="#Service-基础" class="headerlink" title="Service 基础"></a>Service 基础</h3><h4 id="Service-类"><a href="#Service-类" class="headerlink" title="Service 类"></a>Service 类</h4><figure class="highlight kotlin"><figcaption><span>Service类解析</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Service</span> </span>&#123;</span><br><span class="line">    onCreate()	<span class="comment">//创建时调用（第一次&lt;Activity&gt;.startService, bindService）</span></span><br><span class="line">    onStartCommand(intent: Intent, flags: <span class="built_in">Int</span>, startId: <span class="built_in">Int</span>)	<span class="comment">//启动时调用(startServi...)</span></span><br><span class="line">    onDestroy()	<span class="comment">//销毁时调用(stopService, unbindService)</span></span><br><span class="line">    onBind(): IBinder <span class="comment">//返回一个绑定接口便于Activity与Service交互</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建、启动与销毁"><a href="#创建、启动与销毁" class="headerlink" title="创建、启动与销毁"></a>创建、启动与销毁</h4><figure class="highlight kotlin"><figcaption><span>Activity中启动与停止Service</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">startServiceBtn.setOnClickListener &#123;</span><br><span class="line">    <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>, MyService::<span class="keyword">class</span>.java)</span><br><span class="line">    startService(intent) <span class="comment">// 启动Service，会同时调用&lt;Service&gt;.onCreate和onStartCommand</span></span><br><span class="line">&#125;</span><br><span class="line">stopServiceBtn.setOnClickListener &#123;</span><br><span class="line">    <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>, MyService::<span class="keyword">class</span>.java)</span><br><span class="line">    stopService(intent) <span class="comment">// 停止Service</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Binder-类"><a href="#Binder-类" class="headerlink" title="Binder 类"></a>Binder 类</h4><p>继承一个Binder，在类中编写自己的函数，通过onBind() 返回该实例给Activity，Activity中调用该实例的方法以实现Activity与Service的通信</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">class IBinder</span><br><span class="line">&lt;&lt;interface&gt;&gt; IBinder</span><br><span class="line">class MyBinder &#123;</span><br><span class="line">	&lt;&lt;自定义&gt;&gt;</span><br><span class="line">&#125;</span><br><span class="line">IBinder &lt;|-- Binder</span><br><span class="line">Binder &lt;|-- MyBinder</span><br></pre></td></tr></table></figure>
+
+<h4 id="ServiceConnection-类"><a href="#ServiceConnection-类" class="headerlink" title="ServiceConnection 类"></a>ServiceConnection 类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">class ServiceConnection &#123;</span><br><span class="line">	&lt;&lt;Abstract&gt;&gt;</span><br><span class="line">	onServiceConnected(ComponentName name, IBinder service) 启动绑定时调用</span><br><span class="line">	onServiceDisconnected(ComponentName name) 结束绑定时调用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="绑定"><a href="#绑定" class="headerlink" title="绑定"></a>绑定</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> : <span class="type">AppCompatActivity</span></span>() &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    lateinit var downloadBinder: MyService.DownloadBinder</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    private val connection = object : ServiceConnection &#123;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        override fun onServiceConnected(name: ComponentName, service: IBinder) &#123;</span></span><br><span class="line"><span class="comment">            downloadBinder = service as MyService.DownloadBinder</span></span><br><span class="line"><span class="comment">            downloadBinder.startDownload()</span></span><br><span class="line"><span class="comment">            downloadBinder.getProgress()</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        override fun onServiceDisconnected(name: ComponentName) &#123;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    &#125;*/</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</span><br><span class="line">        …</span><br><span class="line">        bindServiceBtn.setOnClickListener &#123;</span><br><span class="line">            <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>, MyService::<span class="keyword">class</span>.java)</span><br><span class="line">            bindService(intent, connection, Context.BIND_AUTO_CREATE) <span class="comment">// 绑定Service</span></span><br><span class="line">        &#125;</span><br><span class="line">        unbindServiceBtn.setOnClickListener &#123;</span><br><span class="line">            unbindService(connection) <span class="comment">// 解绑Service</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Service-生命周期"><a href="#Service-生命周期" class="headerlink" title="Service 生命周期"></a>Service 生命周期</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">调用了n次startService--&gt;|停止Service|1次stopService</span><br><span class="line">既调用了startService又调用了bindService--&gt;|停止Service|stopService+unbindService</span><br><span class="line">同一个Service类只会存在一个实例</span><br></pre></td></tr></table></figure>
+
+<h4 id="前台服务-Foreground"><a href="#前台服务-Foreground" class="headerlink" title="前台服务 Foreground"></a>前台服务 Foreground</h4><blockquote>
+<p>前台Service和普通Service最大的区别就在于，它会一直有一个正在运行的图标在系统的状态栏显示，下拉状态栏后可以看到更加详细的信息，非常类似于通知的效果。</p>
+<p>由于状态栏中一直有一个正在运行的图标，相当于我们的应用以另外一种形式保持在前台可见状态，所以系统不会倾向于回收前台Service。</p>
+</blockquote>
+<p>启用方式：在<code>&lt;Service&gt;.onCreat()</code>中创建一条通知，大体上与1.1中创建通知的方式一样，不同的是不用通知管理器发送通知而是以startForeground(…)发送通知。</p>
+<figure class="highlight xml"><figcaption><span>应用开启前台服务权限</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">package</span>=<span class="string">&quot;com.example.servicetest&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">&quot;android.permission.FOREGROUND_SERVICE&quot;</span> /&gt;</span></span><br><span class="line">    …</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight kotlin"><figcaption><span>前台服务实例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyService</span> : <span class="type">Service</span></span>() &#123;</span><br><span class="line">    …</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate()</span><br><span class="line">        <span class="keyword">val</span> manager = getSystemService(Context.NOTIFICATION_SERVICE) asNotificationManager</span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;</span><br><span class="line">            <span class="keyword">val</span> channel = NotificationChannel(<span class="string">&quot;my_service&quot;</span>, <span class="string">&quot;前台Service通知&quot;</span>, NotificationManager.IMPORTANCE_DEFAULT)</span><br><span class="line">            manager.createNotificationChannel(channel)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">val</span> intent = Intent(<span class="keyword">this</span>, MainActivity::<span class="keyword">class</span>.java)</span><br><span class="line">        <span class="keyword">val</span> pi = PendingIntent.getActivity(<span class="keyword">this</span>, <span class="number">0</span>, intent, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">val</span> notification = NotificationCompat.Builder(<span class="keyword">this</span>, <span class="string">&quot;my_service&quot;</span>)</span><br><span class="line">            .setContentTitle(<span class="string">&quot;This is content title&quot;</span>)</span><br><span class="line">            .setContentText(<span class="string">&quot;This is content text&quot;</span>)</span><br><span class="line">            .setSmallIcon(R.drawable.small_icon)</span><br><span class="line">            .setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.large_icon))</span><br><span class="line">            .setContentIntent(pi)</span><br><span class="line">            .build()</span><br><span class="line">        startForeground(<span class="number">1</span>, notification)</span><br><span class="line">    &#125;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="IntentService-类"><a href="#IntentService-类" class="headerlink" title="IntentService 类"></a>IntentService 类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">class IntentService &#123;</span><br><span class="line">	&lt;&lt;Abstract&gt;&gt;</span><br><span class="line">	onHandleIntent(Intent intent)*</span><br><span class="line">&#125;</span><br><span class="line">class MyIntentService &#123;</span><br><span class="line">	&lt;&lt;自定义&gt;&gt;</span><br><span class="line">&#125;</span><br><span class="line">class Service &#123;</span><br><span class="line">	&lt;&lt;Abstract&gt;&gt;</span><br><span class="line">&#125;</span><br><span class="line">Service &lt;|-- IntentService</span><br><span class="line">IntentService &lt;|-- MyIntentService</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>作用：自动开启线程、自动停止服务</li>
+</ul>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/%E3%80%8A%E5%85%B1%E4%BA%A7%E5%85%9A%E5%AE%A3%E8%A8%80%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    (no title)
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/%E3%80%8A%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%9AAndroid%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%20(%E4%B8%80)/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title"></div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            WeiliangBai &copy; 2020 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
